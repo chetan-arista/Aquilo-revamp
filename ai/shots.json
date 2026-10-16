@@ -1,0 +1,48 @@
+{
+  "_about": "AI motion shots for the AQUILO sites. Each starts from the client's REAL product photo, so the product in the video is the actual product; Wan 2.2 only adds motion (water, light, camera).",
+  "negative": "blurry, low quality, deformed product, warped metal, melting, morphing faucet, changing shape, text, watermark, logo, shaky camera, people, hands, extra objects",
+  "shots": [
+    {
+      "id": "rain-gold",
+      "use": "Sanitaryware — Showers section",
+      "image": "https://www.aquilo.in/wp-content/uploads/2026/02/DSC_9549_1200x1632.jpg",
+      "orientation": "portrait",
+      "prompt": "A luxury brass rain shower head mounted on a wall, water falling in fine glittering streams, droplets catching warm golden light, lush green wall softly out of focus, very slow cinematic camera push-in, photorealistic, the shower head stays perfectly still and unchanged"
+    },
+    {
+      "id": "spa-sunset",
+      "use": "Sanitaryware — Wellness section",
+      "image": "https://www.aquilo.in/wp-content/uploads/2022/03/WHALE-1st-pg.webp",
+      "orientation": "landscape",
+      "prompt": "A sculptural white freestanding spa bathtub on a wooden deck at dusk beside a calm sea, candle flames flicker gently, soft ripples on the water surface, the sky glows pink and violet, very slow cinematic camera push-in, photorealistic, the bathtub stays perfectly unchanged"
+    },
+    {
+      "id": "basin-flow",
+      "use": "Sanitaryware — Statement / Faucets",
+      "image": "https://www.aquilo.in/wp-content/uploads/2023/02/basin-mixer-min.jpg",
+      "orientation": "landscape",
+      "prompt": "A modern gunmetal basin mixer on a white marble vanity, a clear smooth stream of water flows from the spout into the basin, gentle reflections on the marble, soft daylight, very slow cinematic camera drift, photorealistic, the faucet stays perfectly unchanged"
+    },
+    {
+      "id": "spray-dark",
+      "use": "Gateway — Altier panel / Altier site",
+      "image": "https://www.aquilo.in/wp-content/uploads/2022/04/3-1-scaled.webp",
+      "orientation": "landscape",
+      "prompt": "Twin fine mist sprays and a central stream of water falling through darkness, droplets glitter in a beam of light, slow motion, cinematic, photorealistic, deep black background"
+    },
+    {
+      "id": "basin-rosegold",
+      "use": "Gateway — Exclusive panel / Exclusive site",
+      "image": "https://www.aquilo.in/wp-content/uploads/2022/09/AQX-SS-8338-BRG-GM.png",
+      "orientation": "portrait",
+      "prompt": "A cylindrical freestanding basin in matte black with a polished rose gold rim, studio darkness, a soft light slowly sweeps across the rose gold surface creating moving reflections, very slow orbiting camera, photorealistic, product stays perfectly unchanged"
+    },
+    {
+      "id": "ceiling-rain",
+      "use": "Sanitaryware — Technology section",
+      "image": "https://www.aquilo.in/wp-content/uploads/2022/08/edited-1.jpg",
+      "orientation": "landscape",
+      "prompt": "A round ceiling rain shower in a dark luxury bathroom, a dense curtain of water droplets falls straight down glowing with soft blue light, steam drifts, slow cinematic camera tilt, photorealistic, the shower head stays perfectly unchanged"
+    }
+  ]
+}

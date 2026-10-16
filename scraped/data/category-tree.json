@@ -1,0 +1,1847 @@
+[
+  {
+    "id": 216,
+    "name": "Aquilo Global",
+    "slug": "aquilo-global",
+    "link": "https://www.aquilo.in/category/aquilo-global/",
+    "count": 8,
+    "image": null,
+    "children": []
+  },
+  {
+    "id": 115,
+    "name": "Bathtub Jaccuzi",
+    "slug": "bathtub-jaccuzi",
+    "link": "https://www.aquilo.in/category/wellness/bathtub-jaccuzi/",
+    "count": 14,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/03/A410102-scaled.jpg",
+    "children": []
+  },
+  {
+    "id": 103,
+    "name": "Body Jets",
+    "slug": "body-jets",
+    "link": "https://www.aquilo.in/category/showers/wall-showers/body-jets/",
+    "count": 2,
+    "image": "https://www.aquilo.in/wp-content/uploads/2021/12/Body-Jets-img.jpg",
+    "children": []
+  },
+  {
+    "id": 104,
+    "name": "Body Showers",
+    "slug": "body-showers",
+    "link": "https://www.aquilo.in/category/showers/wall-showers/body-showers/",
+    "count": 4,
+    "image": "https://www.aquilo.in/wp-content/uploads/2021/12/Body-Showers.jpg",
+    "children": []
+  },
+  {
+    "id": 117,
+    "name": "Build in Bathtubs",
+    "slug": "build-in-bathtubs",
+    "link": "https://www.aquilo.in/category/wellness/build-in-bathtubs/",
+    "count": 3,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/03/104-B-1-scaled.jpg",
+    "children": []
+  },
+  {
+    "id": 135,
+    "name": "Collections",
+    "slug": "collections",
+    "link": "https://www.aquilo.in/category/collections/",
+    "count": 313,
+    "image": null,
+    "children": [
+      {
+        "id": 215,
+        "name": "Chrome Finish",
+        "slug": "chrome-finish",
+        "link": "https://www.aquilo.in/category/collections/chrome-finish/",
+        "count": 88,
+        "image": null,
+        "children": [
+          {
+            "id": 210,
+            "name": "Adren",
+            "slug": "adren",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/adren/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Arden-500x291-1.jpg",
+            "children": [
+              {
+                "id": 212,
+                "name": "Shower Area",
+                "slug": "shower-area-adren",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/adren/shower-area-adren/",
+                "count": 2,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 190,
+            "name": "Cascade",
+            "slug": "cascade-collections",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/cascade-collections/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets20_20Faucets20in20Chrome20Finish-Cascade-500x291-1.webp",
+            "children": [
+              {
+                "id": 191,
+                "name": "Basin Area",
+                "slug": "basin-area-cascade-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/cascade-collections/basin-area-cascade-collections/",
+                "count": 2,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 192,
+                "name": "Shower Area",
+                "slug": "shower-area-cascade-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/cascade-collections/shower-area-cascade-collections/",
+                "count": 4,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 194,
+            "name": "Dimond",
+            "slug": "dimond-collections",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/dimond-collections/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Dimond-500x291-1.jpg",
+            "children": [
+              {
+                "id": 195,
+                "name": "Basin Area",
+                "slug": "basin-area-dimond-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/dimond-collections/basin-area-dimond-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 196,
+                "name": "Shower Area",
+                "slug": "shower-area-dimond-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/dimond-collections/shower-area-dimond-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 206,
+            "name": "Edge",
+            "slug": "edge-collections",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/edge-collections/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Edge-500x291-1.jpg",
+            "children": [
+              {
+                "id": 207,
+                "name": "Basin Area",
+                "slug": "basin-area-edge-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/edge-collections/basin-area-edge-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 208,
+                "name": "Shower Area",
+                "slug": "shower-area-edge-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/edge-collections/shower-area-edge-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 202,
+            "name": "Flow",
+            "slug": "flow-collections",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/flow-collections/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Flow-500x291-1.jpg",
+            "children": [
+              {
+                "id": 203,
+                "name": "Basin Area",
+                "slug": "basin-area-flow-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/flow-collections/basin-area-flow-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 204,
+                "name": "Shower Area",
+                "slug": "shower-area-flow-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/flow-collections/shower-area-flow-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 198,
+            "name": "Lean",
+            "slug": "lean-collections",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/lean-collections/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Lean-500x291-1.jpg",
+            "children": [
+              {
+                "id": 199,
+                "name": "Basin Area",
+                "slug": "basin-area-lean-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/lean-collections/basin-area-lean-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 200,
+                "name": "Shower Area",
+                "slug": "shower-area-lean-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/lean-collections/shower-area-lean-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 271,
+            "name": "Liberty Chrome Series",
+            "slug": "liberty-chrome-series",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/liberty-chrome-series/",
+            "count": 9,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/LibertyChrome_Basin-area_image.webp",
+            "children": [
+              {
+                "id": 272,
+                "name": "Basin Area",
+                "slug": "basin-area-liberty-chrome-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/liberty-chrome-series/basin-area-liberty-chrome-series/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 273,
+                "name": "Shower Area",
+                "slug": "shower-area-liberty-chrome-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/liberty-chrome-series/shower-area-liberty-chrome-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 186,
+            "name": "Lute",
+            "slug": "lute-collections",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/lute-collections/",
+            "count": 8,
+            "image": "https://www.aquilo.in/wp-content/uploads/2021/12/lute-series.jpg",
+            "children": [
+              {
+                "id": 187,
+                "name": "Basin Area",
+                "slug": "basin-area-lute-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/lute-collections/basin-area-lute-collections/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 188,
+                "name": "Shower Area",
+                "slug": "shower-area-lute-collections",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/lute-collections/shower-area-lute-collections/",
+                "count": 5,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 260,
+            "name": "Moonlight Chrome Series",
+            "slug": "moonlight-chrome-series",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/moonlight-chrome-series/",
+            "count": 11,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image.webp",
+            "children": [
+              {
+                "id": 261,
+                "name": "Basin Area",
+                "slug": "basin-area-moonlight-chrome-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/moonlight-chrome-series/basin-area-moonlight-chrome-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 262,
+                "name": "Shower Area",
+                "slug": "shower-area-moonlight-chrome-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/moonlight-chrome-series/shower-area-moonlight-chrome-series/",
+                "count": 6,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 182,
+            "name": "Morandi Chrome Finish",
+            "slug": "morandi-chrome-finish",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/morandi-chrome-finish/",
+            "count": 13,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-1103-SMALL-BASIN-MIXER-1-500x500-1.jpg",
+            "children": [
+              {
+                "id": 183,
+                "name": "Basin Area",
+                "slug": "basin-area-morandi-chrome-finish",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/morandi-chrome-finish/basin-area-morandi-chrome-finish/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 184,
+                "name": "Shower Area",
+                "slug": "shower-area-morandi-chrome-finish",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/morandi-chrome-finish/shower-area-morandi-chrome-finish/",
+                "count": 10,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 264,
+            "name": "Silk Rain Series",
+            "slug": "silk-rain-chrome-series",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/silk-rain-chrome-series/",
+            "count": 10,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image-1.webp",
+            "children": [
+              {
+                "id": 265,
+                "name": "Basin Area",
+                "slug": "basin-area-silk-rain-chrome-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/silk-rain-chrome-series/basin-area-silk-rain-chrome-series/",
+                "count": 6,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 266,
+                "name": "Shower Area",
+                "slug": "shower-area-silk-rain-chrome-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/silk-rain-chrome-series/shower-area-silk-rain-chrome-series/",
+                "count": 4,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 267,
+            "name": "Spring Series",
+            "slug": "spring-series",
+            "link": "https://www.aquilo.in/category/collections/chrome-finish/spring-series/",
+            "count": 5,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image-3.webp",
+            "children": [
+              {
+                "id": 269,
+                "name": "Basin Area",
+                "slug": "basin-area-spring-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/spring-series/basin-area-spring-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 270,
+                "name": "Shower Area",
+                "slug": "shower-area-spring-series",
+                "link": "https://www.aquilo.in/category/collections/chrome-finish/spring-series/shower-area-spring-series/",
+                "count": 2,
+                "image": null,
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 214,
+        "name": "Colour Finish",
+        "slug": "colour-finish",
+        "link": "https://www.aquilo.in/category/collections/colour-finish/",
+        "count": 203,
+        "image": null,
+        "children": [
+          {
+            "id": 319,
+            "name": "Champagne Gold",
+            "slug": "champagne-gold",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/champagne-gold/",
+            "count": 13,
+            "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Champagne-Gold.jpg",
+            "children": [
+              {
+                "id": 324,
+                "name": "Complementry Items",
+                "slug": "complementry-items",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/champagne-gold/complementry-items/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 320,
+                "name": "Olivia",
+                "slug": "olivia",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/champagne-gold/olivia/",
+                "count": 1,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 321,
+                "name": "Olivia Plus",
+                "slug": "olivia-plus",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/champagne-gold/olivia-plus/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 322,
+                "name": "Quad",
+                "slug": "quad",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/champagne-gold/quad/",
+                "count": 4,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 288,
+            "name": "Liberty Brush Brass Series",
+            "slug": "liberty-brush-brass-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/liberty-brush-brass-series/",
+            "count": 14,
+            "image": null,
+            "children": [
+              {
+                "id": 314,
+                "name": "Accessories",
+                "slug": "accessories",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/liberty-brush-brass-series/accessories/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 289,
+                "name": "Basin Area",
+                "slug": "basin-area-liberty-brush-brass-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/liberty-brush-brass-series/basin-area-liberty-brush-brass-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 290,
+                "name": "Shower Area",
+                "slug": "shower-area-liberty-brush-brass-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/liberty-brush-brass-series/shower-area-liberty-brush-brass-series/",
+                "count": 7,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 177,
+            "name": "Liberty Brush Nickle Series",
+            "slug": "liberty-brush-nickle-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/liberty-brush-nickle-series/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-3108-BN-WALL-MOUNTED-BASIN-MIXER-500x500-1.jpeg",
+            "children": [
+              {
+                "id": 178,
+                "name": "Basin Area",
+                "slug": "basin-area-liberty-brush-nickle-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/liberty-brush-nickle-series/basin-area-liberty-brush-nickle-series/",
+                "count": 1,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 179,
+                "name": "Shower Area",
+                "slug": "shower-area-liberty-brush-nickle-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/liberty-brush-nickle-series/shower-area-liberty-brush-nickle-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 167,
+            "name": "Liberty ORB Series",
+            "slug": "copper-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/copper-series/",
+            "count": 21,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets20_20Faucets20in20Color20Finish-Copper-500x291-1.webp",
+            "children": [
+              {
+                "id": 170,
+                "name": "Accessories",
+                "slug": "accessories-copper-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/copper-series/accessories-copper-series/",
+                "count": 8,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 168,
+                "name": "Basin Area",
+                "slug": "basin-area-copper-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/copper-series/basin-area-copper-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 169,
+                "name": "Shower Area",
+                "slug": "shower-area-copper-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/copper-series/shower-area-copper-series/",
+                "count": 8,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 326,
+            "name": "Linea Brush Brass",
+            "slug": "linea-brush-brass",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/linea-brush-brass/",
+            "count": 11,
+            "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Linea-Brush-Brass.jpg",
+            "children": [
+              {
+                "id": 327,
+                "name": "Accessories",
+                "slug": "accessories-line-brush-brass",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/linea-brush-brass/accessories-line-brush-brass/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 328,
+                "name": "Basin Area",
+                "slug": "basin-area-line-brush-brass",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/linea-brush-brass/basin-area-line-brush-brass/",
+                "count": 2,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 329,
+                "name": "Shower Area",
+                "slug": "shower-area-line-brush-brass",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/linea-brush-brass/shower-area-line-brush-brass/",
+                "count": 5,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 136,
+            "name": "Moonlight Black Matt Series",
+            "slug": "moonlight-black-matt-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-black-matt-series/",
+            "count": 15,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/1-500x401-1.jpg",
+            "children": [
+              {
+                "id": 315,
+                "name": "Accessories",
+                "slug": "accessories-moonlight-black-matt-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-black-matt-series/accessories-moonlight-black-matt-series/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 142,
+                "name": "Basin Area",
+                "slug": "basin-area-moonlight-black-matt-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-black-matt-series/basin-area-moonlight-black-matt-series/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 143,
+                "name": "Shower Area",
+                "slug": "shower-area-moonlight-black-matt-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-black-matt-series/shower-area-moonlight-black-matt-series/",
+                "count": 7,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 148,
+            "name": "Moonlight Brush Gold Series",
+            "slug": "moonlight-brush-gold-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brush-gold-series/",
+            "count": 11,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-3105-1-MB-3-HOLE-BASIN-MIXER-1-500x375-2.webp",
+            "children": [
+              {
+                "id": 151,
+                "name": "Accessories",
+                "slug": "accessories-moonlight-brush-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brush-gold-series/accessories-moonlight-brush-gold-series/",
+                "count": 2,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 149,
+                "name": "Basin Area",
+                "slug": "basin-area-moonlight-brush-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brush-gold-series/basin-area-moonlight-brush-gold-series/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 150,
+                "name": "Shower Area",
+                "slug": "shower-area-moonlight-brush-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brush-gold-series/shower-area-moonlight-brush-gold-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 274,
+            "name": "Moonlight Brushed Rose Gold Series",
+            "slug": "moonlight-brushed-rose-gold-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brushed-rose-gold-series/",
+            "count": 12,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image.jpg",
+            "children": [
+              {
+                "id": 316,
+                "name": "Accessories",
+                "slug": "accessories-moonlight-brushed-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brushed-rose-gold-series/accessories-moonlight-brushed-rose-gold-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 275,
+                "name": "Basin Area",
+                "slug": "basin-area-moonlight-brushed-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brushed-rose-gold-series/basin-area-moonlight-brushed-rose-gold-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 276,
+                "name": "Shower Area",
+                "slug": "shower-area-moonlight-brushed-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-brushed-rose-gold-series/shower-area-moonlight-brushed-rose-gold-series/",
+                "count": 6,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 293,
+            "name": "Moonlight Porcelain White Series",
+            "slug": "moonlight-porcelain-white-series-colour-finish",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-porcelain-white-series-colour-finish/",
+            "count": 9,
+            "image": null,
+            "children": [
+              {
+                "id": 294,
+                "name": "Basin Area",
+                "slug": "basin-area-moonlight-porcelain-white-series-colour-finish",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-porcelain-white-series-colour-finish/basin-area-moonlight-porcelain-white-series-colour-finish/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 295,
+                "name": "Shower Area",
+                "slug": "shower-area-moonlight-porcelain-white-series-colour-finish",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-porcelain-white-series-colour-finish/shower-area-moonlight-porcelain-white-series-colour-finish/",
+                "count": 6,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 137,
+            "name": "Moonlight Rose Gold Series",
+            "slug": "moonlight-rose-gold-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-rose-gold-series/",
+            "count": 9,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/1-2-500x300-1.jpg",
+            "children": [
+              {
+                "id": 317,
+                "name": "Accessories",
+                "slug": "accessories-moonlight-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-rose-gold-series/accessories-moonlight-rose-gold-series/",
+                "count": 2,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 145,
+                "name": "Basin Area",
+                "slug": "basin-area-moonlight-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-rose-gold-series/basin-area-moonlight-rose-gold-series/",
+                "count": 1,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 146,
+                "name": "Shower Area",
+                "slug": "shower-area-moonlight-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/moonlight-rose-gold-series/shower-area-moonlight-rose-gold-series/",
+                "count": 6,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 132,
+            "name": "Morandi Black Matt Series",
+            "slug": "morandi-black-matt-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-black-matt-series/",
+            "count": 21,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/02.webp",
+            "children": [
+              {
+                "id": 140,
+                "name": "Accessories",
+                "slug": "accessories-morandi-black-matt-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-black-matt-series/accessories-morandi-black-matt-series/",
+                "count": 8,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 138,
+                "name": "Basin Area",
+                "slug": "basin-area",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-black-matt-series/basin-area/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 139,
+                "name": "Shower Area",
+                "slug": "shower-area",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-black-matt-series/shower-area/",
+                "count": 4,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 158,
+            "name": "Morandi Gold Series",
+            "slug": "morandi-gold-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-gold-series/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-3103-GD-WALL-MOUNTED-BASIN-MIXER-500x302-1.jpg",
+            "children": [
+              {
+                "id": 159,
+                "name": "Basin Area",
+                "slug": "basin-area-morandi-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-gold-series/basin-area-morandi-gold-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 160,
+                "name": "Shower Area",
+                "slug": "shower-area-morandi-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-gold-series/shower-area-morandi-gold-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 153,
+            "name": "Morandi Rose Gold Series",
+            "slug": "morandi-rose-gold-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-rose-gold-series/",
+            "count": 13,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-1103-RGD-BASIN-MIXER-SMALL-2-500x500-1.jpg",
+            "children": [
+              {
+                "id": 156,
+                "name": "Accessories",
+                "slug": "accessories-morandi-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-rose-gold-series/accessories-morandi-rose-gold-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 154,
+                "name": "Basin Area",
+                "slug": "basin-area-morandi-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-rose-gold-series/basin-area-morandi-rose-gold-series/",
+                "count": 3,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 155,
+                "name": "Shower Area",
+                "slug": "shower-area-morandi-rose-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/morandi-rose-gold-series/shower-area-morandi-rose-gold-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 162,
+            "name": "PEI Gold Series",
+            "slug": "pei-gold-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/pei-gold-series/",
+            "count": 20,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/01/06.webp",
+            "children": [
+              {
+                "id": 165,
+                "name": "Accessories",
+                "slug": "accessories-pei-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/pei-gold-series/accessories-pei-gold-series/",
+                "count": 10,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 163,
+                "name": "Basin Area",
+                "slug": "basin-area-pei-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/pei-gold-series/basin-area-pei-gold-series/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 164,
+                "name": "Shower Area",
+                "slug": "shower-area-pei-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/pei-gold-series/shower-area-pei-gold-series/",
+                "count": 6,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 277,
+            "name": "Silk Rain Steel Grey Series",
+            "slug": "silk-rain-steel-grey-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/silk-rain-steel-grey-series/",
+            "count": 15,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image-2.webp",
+            "children": [
+              {
+                "id": 318,
+                "name": "Accessories",
+                "slug": "accessories-silk-rain-steel-grey-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/silk-rain-steel-grey-series/accessories-silk-rain-steel-grey-series/",
+                "count": 4,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 278,
+                "name": "Basin Area",
+                "slug": "basin-area-silk-rain-steel-grey-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/silk-rain-steel-grey-series/basin-area-silk-rain-steel-grey-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 279,
+                "name": "Shower Area",
+                "slug": "shower-area-silk-rain-steel-grey-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/silk-rain-steel-grey-series/shower-area-silk-rain-steel-grey-series/",
+                "count": 6,
+                "image": null,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 172,
+            "name": "Spring Brush Gold Series",
+            "slug": "spring-brush-gold-series",
+            "link": "https://www.aquilo.in/category/collections/colour-finish/spring-brush-gold-series/",
+            "count": 9,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/08.webp",
+            "children": [
+              {
+                "id": 175,
+                "name": "Accessories",
+                "slug": "accessories-spring-brush-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/spring-brush-gold-series/accessories-spring-brush-gold-series/",
+                "count": 2,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 173,
+                "name": "Basin Area",
+                "slug": "basin-area-spring-brush-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/spring-brush-gold-series/basin-area-spring-brush-gold-series/",
+                "count": 2,
+                "image": null,
+                "children": []
+              },
+              {
+                "id": 174,
+                "name": "Shower Area",
+                "slug": "shower-area-spring-brush-gold-series",
+                "link": "https://www.aquilo.in/category/collections/colour-finish/spring-brush-gold-series/shower-area-spring-brush-gold-series/",
+                "count": 5,
+                "image": null,
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Controllers and Diverters",
+    "slug": "controllers-and-diverters",
+    "link": "https://www.aquilo.in/category/controllers-and-diverters/",
+    "count": 36,
+    "image": "https://www.aquilo.in/wp-content/uploads/2021/12/Controllers-and-Diverters.jpg",
+    "children": [
+      {
+        "id": 109,
+        "name": "Go Click",
+        "slug": "go-click",
+        "link": "https://www.aquilo.in/category/controllers-and-diverters/go-click/",
+        "count": 6,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Showers_Controllers-and-Diverters-Go-Click.jpg",
+        "children": []
+      },
+      {
+        "id": 298,
+        "name": "Go Slide",
+        "slug": "go-slide",
+        "link": "https://www.aquilo.in/category/controllers-and-diverters/go-slide/",
+        "count": 24,
+        "image": "https://www.aquilo.in/wp-content/uploads/2024/09/Go-Slide.webp",
+        "children": [
+          {
+            "id": 299,
+            "name": "Moonlight Go Slide",
+            "slug": "moonlight-go-slide",
+            "link": "https://www.aquilo.in/category/controllers-and-diverters/go-slide/moonlight-go-slide/",
+            "count": 12,
+            "image": "https://www.aquilo.in/wp-content/uploads/2024/09/Moonlight-Go-Slide.webp",
+            "children": []
+          },
+          {
+            "id": 300,
+            "name": "Morandi Go Slide",
+            "slug": "morandi-go-slide",
+            "link": "https://www.aquilo.in/category/controllers-and-diverters/go-slide/morandi-go-slide/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2024/09/Morandi-Go-Slide.jpg",
+            "children": []
+          },
+          {
+            "id": 301,
+            "name": "Silk Rain Go Slide",
+            "slug": "silk-rain-go-slide",
+            "link": "https://www.aquilo.in/category/controllers-and-diverters/go-slide/silk-rain-go-slide/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2024/09/Silk-Rain-Go-Slide.webp",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 108,
+        "name": "Linear Diverters",
+        "slug": "linear-diverters",
+        "link": "https://www.aquilo.in/category/controllers-and-diverters/linear-diverters/",
+        "count": 2,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Showers_Controllers-and-Diverters-Linear-diverters.jpg",
+        "children": []
+      },
+      {
+        "id": 107,
+        "name": "Regular Diverters",
+        "slug": "regular-diverters",
+        "link": "https://www.aquilo.in/category/controllers-and-diverters/regular-diverters/",
+        "count": 4,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Showers_Controllers-and-Diverters-regular-diverters.jpg",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Faucets",
+    "slug": "faucets",
+    "link": "https://www.aquilo.in/category/faucets/",
+    "count": 215,
+    "image": "https://www.aquilo.in/wp-content/uploads/2021/11/faucuts.jpg",
+    "children": [
+      {
+        "id": 38,
+        "name": "Designer Faucets",
+        "slug": "designer-faucets",
+        "link": "https://www.aquilo.in/category/faucets/designer-faucets/",
+        "count": 78,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/01/D.webp",
+        "children": [
+          {
+            "id": 55,
+            "name": "Arc Series",
+            "slug": "arc-series",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/arc-series/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/DF-1001_GD_Wall_Mounted_Basin_Mixer.webp",
+            "children": []
+          },
+          {
+            "id": 56,
+            "name": "Crystal Series",
+            "slug": "crystal-series",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/crystal-series/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-4209-GD....jpg",
+            "children": []
+          },
+          {
+            "id": 52,
+            "name": "Designer Chrome Finish",
+            "slug": "designer-chrome-finish",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/designer-chrome-finish/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets_-Designer-Faucets-Designer-Chrome-Finish.jpg",
+            "children": []
+          },
+          {
+            "id": 53,
+            "name": "Designer Colour Finish",
+            "slug": "designer-colour-finish",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/designer-colour-finish/",
+            "count": 19,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets_-Designer-Faucets-DESIGNER-COLOUR-FINISH.jpg",
+            "children": []
+          },
+          {
+            "id": 54,
+            "name": "Drop Series",
+            "slug": "drop-series",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/drop-series/",
+            "count": 9,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/drop-cat-img.webp",
+            "children": []
+          },
+          {
+            "id": 57,
+            "name": "Glass Series",
+            "slug": "glass-series",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/glass-series/",
+            "count": 5,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-3210-....jpg",
+            "children": []
+          },
+          {
+            "id": 291,
+            "name": "Liberty Colour Tall Basin Mixers",
+            "slug": "liberty-colour-tall-basin-mixers",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/liberty-colour-tall-basin-mixers/",
+            "count": 9,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/12/BACKGROUND-IMAGE-1-scaled.jpg",
+            "children": []
+          },
+          {
+            "id": 58,
+            "name": "Marble Series",
+            "slug": "marble-series",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/marble-series/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/01/AQx_-_4210_WH_BRG.webp",
+            "children": []
+          },
+          {
+            "id": 333,
+            "name": "Prologio Series",
+            "slug": "prologio-series",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/prologio-series/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Prologio-Series.jpg",
+            "children": []
+          },
+          {
+            "id": 296,
+            "name": "Rome Series",
+            "slug": "rome-series",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/rome-series/",
+            "count": 18,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/12/BACKGROUND-IMAGE-3-scaled.jpg",
+            "children": []
+          },
+          {
+            "id": 334,
+            "name": "Romma Crystalo",
+            "slug": "romma-crystalo",
+            "link": "https://www.aquilo.in/category/faucets/designer-faucets/romma-crystalo/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Romma-Crystallo.jpg",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 36,
+        "name": "Faucets in Chrome Finish",
+        "slug": "faucets-in-chrome-finish",
+        "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/",
+        "count": 55,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/lean.webp",
+        "children": [
+          {
+            "id": 41,
+            "name": "Cascade",
+            "slug": "cascade",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/cascade/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets20_20Faucets20in20Chrome20Finish-Cascade.webp",
+            "children": []
+          },
+          {
+            "id": 42,
+            "name": "Dimond",
+            "slug": "dimond",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/dimond/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Dimond.jpg",
+            "children": []
+          },
+          {
+            "id": 45,
+            "name": "Edge",
+            "slug": "edge",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/edge/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Edge.jpg",
+            "children": []
+          },
+          {
+            "id": 44,
+            "name": "Flow",
+            "slug": "flow",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/flow/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Flow.jpg",
+            "children": []
+          },
+          {
+            "id": 43,
+            "name": "Lean",
+            "slug": "lean",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/lean/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets-_-Faucets-in-Chrome-Finish-Lean.jpg",
+            "children": []
+          },
+          {
+            "id": 256,
+            "name": "Liberty Chrome",
+            "slug": "liberty-chrome-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/liberty-chrome-series-faucets/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/LibertyChrome_Basin-area_image.webp",
+            "children": []
+          },
+          {
+            "id": 40,
+            "name": "Lute",
+            "slug": "lute",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/lute/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2021/12/lute-series.jpg",
+            "children": []
+          },
+          {
+            "id": 259,
+            "name": "Moonlight Chrome",
+            "slug": "moonlight-chrome-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/moonlight-chrome-series-faucets/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image.webp",
+            "children": []
+          },
+          {
+            "id": 39,
+            "name": "Morandi Chrome",
+            "slug": "morandi-chrome",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/morandi-chrome/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-1103-SMALL-BASIN-MIXER-1.jpg",
+            "children": []
+          },
+          {
+            "id": 263,
+            "name": "Silk Rain",
+            "slug": "silk-rain-chrome-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/silk-rain-chrome-series-faucets/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image-1.webp",
+            "children": []
+          },
+          {
+            "id": 268,
+            "name": "Spring",
+            "slug": "spring-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-chrome-finish/spring-series-faucets/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image-3.webp",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "name": "Faucets in Colour Finish",
+        "slug": "faucets-in-colour-finish",
+        "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/",
+        "count": 56,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/01/A.webp",
+        "children": [
+          {
+            "id": 287,
+            "name": "Flow Series",
+            "slug": "flow-series",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/flow-series/",
+            "count": 9,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/12/AQ-3106-GD-2-scaled.jpg",
+            "children": []
+          },
+          {
+            "id": 285,
+            "name": "Liberty Brush Brass",
+            "slug": "liberty-brush-brass-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/liberty-brush-brass-series-faucets/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/12/BACKGROUND-IMAGE-scaled.jpg",
+            "children": []
+          },
+          {
+            "id": 29,
+            "name": "Liberty Brush Nickle",
+            "slug": "liberty-brush-nickle-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/liberty-brush-nickle-series-faucets/",
+            "count": 1,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-3108-BN-WALL-MOUNTED-BASIN-MIXER.jpeg",
+            "children": []
+          },
+          {
+            "id": 31,
+            "name": "Liberty ORB",
+            "slug": "copper-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/copper-series-faucets/",
+            "count": 5,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets20_20Faucets20in20Color20Finish-Copper.webp",
+            "children": []
+          },
+          {
+            "id": 27,
+            "name": "Moonlight Black Matt",
+            "slug": "moonlight-black-matt-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/moonlight-black-matt-series-faucets/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/1.jpg",
+            "children": []
+          },
+          {
+            "id": 133,
+            "name": "Moonlight Brush Gold",
+            "slug": "moonlight-brush-gold-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/moonlight-brush-gold-series-faucets/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/01/AQ-3105-1-MB-3-HOLE-BASIN-MIXER-1-scaled.webp",
+            "children": []
+          },
+          {
+            "id": 254,
+            "name": "Moonlight Brushed Rose Gold",
+            "slug": "moonlight-brushed-rose-gold-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/moonlight-brushed-rose-gold-series-faucets/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image.jpg",
+            "children": []
+          },
+          {
+            "id": 292,
+            "name": "Moonlight Porcelain White",
+            "slug": "moonlight-porcelain-white-series",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/moonlight-porcelain-white-series/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2024/09/Moonlight-Porcelain-White.jpg",
+            "children": []
+          },
+          {
+            "id": 35,
+            "name": "Moonlight Rose Gold",
+            "slug": "moonlight-rose-gold-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/moonlight-rose-gold-series-faucets/",
+            "count": 1,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/1-2-scaled.jpg",
+            "children": []
+          },
+          {
+            "id": 28,
+            "name": "Morandi Black Matt",
+            "slug": "morandi-black-matt-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/morandi-black-matt-series-faucets/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/01/02.webp",
+            "children": []
+          },
+          {
+            "id": 33,
+            "name": "Morandi Gold",
+            "slug": "morandi-gold-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/morandi-gold-series-faucets/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-3103-GD-WALL-MOUNTED-BASIN-MIXER.jpg",
+            "children": []
+          },
+          {
+            "id": 34,
+            "name": "Morandi Rose Gold",
+            "slug": "morandi-rose-gold-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/morandi-rose-gold-series-faucets/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/AQ-1103-RGD-BASIN-MIXER-SMALL-2.jpg",
+            "children": []
+          },
+          {
+            "id": 32,
+            "name": "PEI Gold",
+            "slug": "pei-gold-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/pei-gold-series-faucets/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/01/06.webp",
+            "children": []
+          },
+          {
+            "id": 255,
+            "name": "Silk Rain Steel Grey",
+            "slug": "silk-rain-steel-grey-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/silk-rain-steel-grey-series-faucets/",
+            "count": 6,
+            "image": "https://www.aquilo.in/wp-content/uploads/2023/04/515x300-image-2.webp",
+            "children": []
+          },
+          {
+            "id": 30,
+            "name": "Spring Brush Gold",
+            "slug": "spring-brush-gold-series-faucets",
+            "link": "https://www.aquilo.in/category/faucets/faucets-in-colour-finish/spring-brush-gold-series-faucets/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/01/08.webp",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 37,
+        "name": "Kitchen Faucets",
+        "slug": "kitchen-faucets",
+        "link": "https://www.aquilo.in/category/faucets/kitchen-faucets/",
+        "count": 10,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/01/C.webp",
+        "children": [
+          {
+            "id": 47,
+            "name": "Colour Finish Mixers",
+            "slug": "colour-finish-mixers",
+            "link": "https://www.aquilo.in/category/faucets/kitchen-faucets/colour-finish-mixers/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/ATKF1212PRG-5-scaled.jpg",
+            "children": []
+          },
+          {
+            "id": 48,
+            "name": "Kitchen Faucets with RO Connection",
+            "slug": "kitchen-faucets-with-ro-connection",
+            "link": "https://www.aquilo.in/category/faucets/kitchen-faucets/kitchen-faucets-with-ro-connection/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets_Kitchen-Faucets-Kitchen-Faucets-with-RO-Connection.jpg",
+            "children": []
+          },
+          {
+            "id": 50,
+            "name": "Mixers with Pullouts",
+            "slug": "mixers-with-pullouts",
+            "link": "https://www.aquilo.in/category/faucets/kitchen-faucets/mixers-with-pullouts/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Faucets_Kitchen-Faucets-Mixers-with-Pullouts.jpg",
+            "children": []
+          },
+          {
+            "id": 49,
+            "name": "Touch Faucets",
+            "slug": "touch-faucets",
+            "link": "https://www.aquilo.in/category/faucets/kitchen-faucets/touch-faucets/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2021/12/Touch-Faucets.jpg",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Free Standing Basins",
+    "slug": "free-standing-basins",
+    "link": "https://www.aquilo.in/category/wash-basins/free-standing-basins/",
+    "count": 19,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/08/OPAL-BEIGE-big.jpg",
+    "children": [
+      {
+        "id": 84,
+        "name": "Ceramic White",
+        "slug": "ceramic-white-free-standing-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/free-standing-basins/ceramic-white-free-standing-basins/",
+        "count": 6,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/09/1.jpg",
+        "children": []
+      },
+      {
+        "id": 81,
+        "name": "Concrete Basins",
+        "slug": "concrete-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/free-standing-basins/concrete-basins/",
+        "count": 1,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Wash-Basins_Table-Top-Basins-Concrete-BASINS.jpg",
+        "children": []
+      },
+      {
+        "id": 83,
+        "name": "Designer Stone Basins",
+        "slug": "designer-stone-basins-free-standing-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/free-standing-basins/designer-stone-basins-free-standing-basins/",
+        "count": 5,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Wash-Basins_Free-Standing-Basins-Designer-Stone-Basins.jpg",
+        "children": []
+      },
+      {
+        "id": 232,
+        "name": "Steel Basins",
+        "slug": "steel-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/free-standing-basins/steel-basins/",
+        "count": 7,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/09/steel-basins.jpg",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Free Standing Bathtubs",
+    "slug": "free-standing-bathtubs",
+    "link": "https://www.aquilo.in/category/wellness/free-standing-bathtubs/",
+    "count": 3,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/08/unnamed207.webp",
+    "children": []
+  },
+  {
+    "id": 70,
+    "name": "Half Pedestal",
+    "slug": "half-pedestal",
+    "link": "https://www.aquilo.in/category/wash-basins/half-pedestal/",
+    "count": 2,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-40245.webp",
+    "children": []
+  },
+  {
+    "id": 23,
+    "name": "Installation Systems",
+    "slug": "installation-systems",
+    "link": "https://www.aquilo.in/category/installation-systems/",
+    "count": 7,
+    "image": "https://www.aquilo.in/wp-content/uploads/2021/12/flush-tank.jpg",
+    "children": [
+      {
+        "id": 129,
+        "name": "Concealed Flush Tanks",
+        "slug": "concealed-flush-tanks",
+        "link": "https://www.aquilo.in/category/installation-systems/concealed-flush-tanks/",
+        "count": 3,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-CS-UNIVERSAL...webp",
+        "children": []
+      },
+      {
+        "id": 126,
+        "name": "Flush Plates",
+        "slug": "flush-plates",
+        "link": "https://www.aquilo.in/category/installation-systems/flush-plates/",
+        "count": 4,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-FP-01-BLACK_MATT.webp",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Multifunction Steam Room",
+    "slug": "multifunction-steam-room",
+    "link": "https://www.aquilo.in/category/wellness/multifunction-steam-room/",
+    "count": 1,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/03/AQ-110-1.webp",
+    "children": []
+  },
+  {
+    "id": 21,
+    "name": "Showers",
+    "slug": "showers",
+    "link": "https://www.aquilo.in/category/showers/",
+    "count": 51,
+    "image": "https://www.aquilo.in/wp-content/uploads/2021/12/shower.jpg",
+    "children": [
+      {
+        "id": 91,
+        "name": "Concealed Ceiling Showers",
+        "slug": "concealed-ceiling-showers",
+        "link": "https://www.aquilo.in/category/showers/concealed-ceiling-showers/",
+        "count": 11,
+        "image": "https://www.aquilo.in/wp-content/uploads/2021/12/Consealed-Ceiling-Showers.jpg",
+        "children": [
+          {
+            "id": 98,
+            "name": "Five Functions Showers",
+            "slug": "five-functions-showers",
+            "link": "https://www.aquilo.in/category/showers/concealed-ceiling-showers/five-functions-showers/",
+            "count": 1,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-4801-5-R_2_.webp",
+            "children": []
+          },
+          {
+            "id": 99,
+            "name": "Four Functions Showers",
+            "slug": "four-functions-showers",
+            "link": "https://www.aquilo.in/category/showers/concealed-ceiling-showers/four-functions-showers/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-3232-4-R_4_-scaled.webp",
+            "children": []
+          },
+          {
+            "id": 102,
+            "name": "Single Function Showers",
+            "slug": "single-function-showers",
+            "link": "https://www.aquilo.in/category/showers/concealed-ceiling-showers/single-function-showers/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-2001-6-scaled.webp",
+            "children": []
+          },
+          {
+            "id": 100,
+            "name": "Three Functions Showers",
+            "slug": "three-functions-showers",
+            "link": "https://www.aquilo.in/category/showers/concealed-ceiling-showers/three-functions-showers/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/edited-2.jpg",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 93,
+        "name": "Hand Showers",
+        "slug": "hand-showers",
+        "link": "https://www.aquilo.in/category/showers/hand-showers/",
+        "count": 3,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/3.jpeg",
+        "children": []
+      },
+      {
+        "id": 90,
+        "name": "Overhead Showers",
+        "slug": "overhead-showers",
+        "link": "https://www.aquilo.in/category/showers/overhead-showers/",
+        "count": 17,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-1601-1_4_.webp",
+        "children": [
+          {
+            "id": 96,
+            "name": "Cascade Showers",
+            "slug": "cascade-showers",
+            "link": "https://www.aquilo.in/category/showers/overhead-showers/cascade-showers/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Showers_Overhead-Showers-Cascade-Showers.jpg",
+            "children": []
+          },
+          {
+            "id": 330,
+            "name": "Lamp Shower",
+            "slug": "lamp-shower",
+            "link": "https://www.aquilo.in/category/showers/overhead-showers/lamp-shower/",
+            "count": 4,
+            "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Lamp-Shower.jpg",
+            "children": []
+          },
+          {
+            "id": 332,
+            "name": "Mist Shower",
+            "slug": "mist-shower",
+            "link": "https://www.aquilo.in/category/showers/overhead-showers/mist-shower/",
+            "count": 5,
+            "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Mist-Shower.jpg",
+            "children": []
+          },
+          {
+            "id": 97,
+            "name": "Rain Showers",
+            "slug": "rain-showers",
+            "link": "https://www.aquilo.in/category/showers/overhead-showers/rain-showers/",
+            "count": 2,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Showers_Overhead-Showers-Rain-Showers.jpg",
+            "children": []
+          },
+          {
+            "id": 95,
+            "name": "Rain With Cascade Showers",
+            "slug": "rain-with-cascade-showers",
+            "link": "https://www.aquilo.in/category/showers/overhead-showers/rain-with-cascade-showers/",
+            "count": 3,
+            "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Showers_Overhead-Showers-Rain-With-Cascade-Showers.jpg",
+            "children": []
+          },
+          {
+            "id": 331,
+            "name": "Shower Bar",
+            "slug": "shower-bar",
+            "link": "https://www.aquilo.in/category/showers/overhead-showers/shower-bar/",
+            "count": 1,
+            "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Shower-Bar.jpg",
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Spa",
+    "slug": "spa",
+    "link": "https://www.aquilo.in/category/wellness/spa/",
+    "count": 5,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/03/AnyConv.com__AQ-3101-IMG.webp",
+    "children": []
+  },
+  {
+    "id": 110,
+    "name": "Steam Generators",
+    "slug": "steam-generators",
+    "link": "https://www.aquilo.in/category/wellness/steam-generators/",
+    "count": 3,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/03/AQ-ST-1001.webp",
+    "children": []
+  },
+  {
+    "id": 112,
+    "name": "Steam Room",
+    "slug": "steam-room",
+    "link": "https://www.aquilo.in/category/wellness/steam-room/",
+    "count": 2,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/03/W1021B-1-1-scaled.webp",
+    "children": []
+  },
+  {
+    "id": 113,
+    "name": "Swim Spa",
+    "slug": "swim-spa",
+    "link": "https://www.aquilo.in/category/wellness/swim-spa/",
+    "count": 1,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/03/AnyConv.com__SWIM-SPA-img-2-1.webp",
+    "children": []
+  },
+  {
+    "id": 69,
+    "name": "Table Top Basins",
+    "slug": "table-top-basins",
+    "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/",
+    "count": 73,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-78190-2.jpg",
+    "children": [
+      {
+        "id": 80,
+        "name": "Ceramic White Wash Basins",
+        "slug": "ceramic-white-wash-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/ceramic-white-wash-basins/",
+        "count": 14,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-78178-2.jpg",
+        "children": []
+      },
+      {
+        "id": 76,
+        "name": "Decorative Basins",
+        "slug": "decorative-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/decorative-basins/",
+        "count": 4,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQX_-_5040_-_BLACK_SILVER-scaled.webp",
+        "children": []
+      },
+      {
+        "id": 77,
+        "name": "Designer Concrete Basins",
+        "slug": "designer-concrete-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/designer-concrete-basins/",
+        "count": 12,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQX-CB-102-BLUE-SS-scaled.webp",
+        "children": []
+      },
+      {
+        "id": 286,
+        "name": "Designer Glass Basins",
+        "slug": "designer-glass-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/designer-glass-basins/",
+        "count": 4,
+        "image": "https://www.aquilo.in/wp-content/uploads/2023/12/AQ-XGB-44A-2.jpg",
+        "children": []
+      },
+      {
+        "id": 213,
+        "name": "Designer Steel Basins",
+        "slug": "designer-steel-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/designer-steel-basins/",
+        "count": 8,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/08/Wash-Basins_Table-Top-Basins-DESIGNER-STEEL-BASINS.jpg",
+        "children": []
+      },
+      {
+        "id": 78,
+        "name": "Designer Stone Basins",
+        "slug": "designer-stone-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/designer-stone-basins/",
+        "count": 8,
+        "image": "https://www.aquilo.in/wp-content/uploads/2021/12/Designer-Stone-Basins.jpg",
+        "children": []
+      },
+      {
+        "id": 325,
+        "name": "Hand Made Basins",
+        "slug": "hand-made-basins",
+        "link": "https://www.aquilo.in/category/wash-basins/table-top-basins/hand-made-basins/",
+        "count": 6,
+        "image": "https://www.aquilo.in/wp-content/uploads/2026/02/Hand-Made-Basins.jpg",
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Toilets",
+    "slug": "toilets",
+    "link": "https://www.aquilo.in/category/toilets/",
+    "count": 27,
+    "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-3017-_Matt_Green.webp",
+    "children": [
+      {
+        "id": 60,
+        "name": "Coloured Wall hung WC",
+        "slug": "coloured-wall-hung-wc",
+        "link": "https://www.aquilo.in/category/toilets/coloured-wall-hung-wc/",
+        "count": 5,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-3017-_Matt_Green.webp",
+        "children": []
+      },
+      {
+        "id": 61,
+        "name": "Floor Mounted WC",
+        "slug": "floor-mounted-wc",
+        "link": "https://www.aquilo.in/category/toilets/floor-mounted-wc/",
+        "count": 10,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-2859.webp",
+        "children": []
+      },
+      {
+        "id": 62,
+        "name": "Intelligent WC",
+        "slug": "intelligent-wc",
+        "link": "https://www.aquilo.in/category/toilets/intelligent-wc/",
+        "count": 3,
+        "image": "https://www.aquilo.in/wp-content/uploads/2022/04/AQ-IT-1002-FM_-WHITE.webp",
+        "children": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,9 @@
+# Ignore all Word documents
+*.docx
+*.doc
+# Scraped originals from aquilo.in (337 MB) — regenerate with: node scripts/scrape.mjs
+scraped/media/
+scraped/download.log
+
+# Local MCP connector config (may contain API keys)
+.mcp.json
