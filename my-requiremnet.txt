@@ -1,0 +1,46 @@
+https://www.aquilo.in/
+
+- Main requirement : we want a animation like this website https://gsap.com/ is has beautiful landing page and horizonal scroll effect on our website and all other things, the one who want this website like https://wisprflow.ai/ animation.
+
+- Competitor websites:
+1. https://loireindia.com/ 
+2. https://tgwc1853.com/
+
+
+- **REQUIREMENT**
+    1. We dont have current website code base as it make up from WordPress or shopify so take all info from that or scrape required video and image and save it for future used.
+    2. Fetch all information from brief i want every single detail to be implemented in website design 
+    3. Make a hierarchy of element available on with there link which i can see on navbar  
+    4. Look at competitor websites 
+    5. do a well define research on our website and a as sanitary store personalized product website check what missing component is there find what 
+    6. Take a 3d animation and interactive 3d animation idea from lando norris website(https://landonorris.com/) inspect code and find repo if possible
+    7. logo remains same , we can add logo loading page with logo animation when first user hit website
+    8. make a premium look of website so use premium color palatte
+    9. Use GSAP and 21 dev and other website to find 3d element and animation and video that can fit with our website 
+    10. As a logo animation done we have hero page according to brief we can add also so aminated Shower effect 3d video and sanitaryware something out of it 
+
+
+- **3d**
+    
+    How I would redesign a website using this setup
+    
+    1. Give Claude Code the existing repository and ask it to analyze the current design and architecture.
+    2. Ask it to propose a redesigned visual direction before changing files.
+    3. Implement the layout, typography, colors, and responsive UI.
+    4. Create a 3D scene in Spline and integrate it into the hero section.
+    5. Add scroll animations and custom 3D interactions only where they improve the experience.
+    6. Test mobile responsiveness, loading speed, accessibility, and visual consistency.
+    
+    One important distinction: Spline's MCP integration helps with the 3D editor; it does not automatically give Claude control over every website builder. Claude Code works on your codebase, while you configure the Spline integration separately.
+    
+    My final recommendation: Start with VS Code + Claude Code + Spline. Add Three.js when you need custom 3D behavior. This gives you the flexibility to redesign existing websites rather than being restricted to a visual website builder.
+    
+- **Design we take reference from**
+    - https://app.spline.design/ui/f13723c3-616b-4cfa-a1c3-b50c06f404dd
+    - https://app.spline.design/ui/4ea7028d-bb1f-471a-99c8-b56f2b9b31bc
+    - https://app.spline.design/ui/4503b704-1deb-4a50-8fb8-51028308f2f7
+    - https://labs.noomoagency.com/ — Landing page animation is good
+    - https://trionn.com/?ref=landing.love — design motion is good
+    - https://labs.chaingpt.org/index.html# — take navigation bar effect and animation
+    - https://nickho-motorsports.nl/  — like the effect of ve4rtical gt3 scroll down and merge into video
+    - https://morphowater.com/ — this one is pretty good
