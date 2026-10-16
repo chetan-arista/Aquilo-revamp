@@ -1,0 +1,474 @@
+==============================================================================
+AQUILO WEBSITE - GOOGLE FLOW (VEO) VIDEO PROCEDURE
+Step-by-step guide to make all 19 website videos. Do it whenever you have time.
+==============================================================================
+
+WHAT THIS IS
+  You will use Google Flow to turn the client's REAL product photos into short cinematic
+  videos (water flowing, light moving, slow camera). Each video has a fixed place on the
+  website. When you're done, Claude cleans them up and puts them on the site.
+
+WHAT YOU NEED
+  - The Google account that has your Flow pass
+  - Chrome on your laptop
+  - This folder:  C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow
+      frames\        10 real AQUILO photos (start frames)
+      ingredients\   6 product cut-outs on white
+      out\           EMPTY - save your finished videos here
+  - About 10-15 minutes per shot (including checking takes)
+  - Credits: "Fast" uses fewer credits than "Quality". Always draft on Fast first.
+
+TIP: Keep this file open on one side of the screen and Flow on the other.
+
+
+==============================================================================
+PART 1 - ONE-TIME SETUP (about 5 minutes)
+==============================================================================
+  1. Open Chrome and go to:  labs.google/flow
+  2. Sign in with the Google account that has your Flow pass.
+  3. Click "New project". Name it:  AQUILO Website
+  4. Find the settings icon (gear / sliders) next to the prompt box and set:
+       Model ................ Veo 3.1 - Fast   (for drafts)
+       Outputs per prompt ... 2                (you get 2 takes, keep the better one)
+       Aspect ratio ......... change it per shot (each shot below says which)
+  5. Note: Google renames buttons now and then. If a label is slightly different,
+     choose the closest option.
+
+
+==============================================================================
+PART 2 - HOW TO MAKE ONE SHOT
+==============================================================================
+
+A) "FRAMES TO VIDEO" SHOTS  (IDs starting with S and G)
+   These keep the real product exactly, because the video starts from the real photo.
+   1. In the mode dropdown on the prompt box, choose "Frames to Video".
+   2. Click the FIRST-frame slot and upload the image listed for the shot
+      (from the frames\ folder).
+   3. If there is an END-frame slot, upload the SAME image again.
+      -> The video then ends where it started, so it loops smoothly on the website.
+      -> If there is no end-frame slot, that's fine. Claude will make the loop later.
+   4. Set the aspect ratio listed for the shot (Landscape 16:9 or Portrait 9:16).
+      If Flow asks how to fit the image, choose crop and keep the product in the middle.
+   5. Copy the shot's PROMPT from PART 4 and paste it into the prompt box.
+   6. Press Generate. Wait (usually 1-3 minutes).
+   7. Watch both takes. Use the checklist in PART 5 and keep the better one.
+      If both are bad, press Generate again (re-roll).
+
+B) "INGREDIENTS TO VIDEO" SHOTS  (IDs starting with L)
+   These build a NEW bathroom scene around the real product.
+   1. Choose "Ingredients to Video".
+   2. Upload the cut-out image listed for the shot (from the ingredients\ folder).
+   3. Set the aspect ratio, paste the prompt and generate.
+   4. Check VERY carefully that the product keeps its exact shape and finish.
+      These shots are more likely to change the product, so expect more re-rolls.
+
+C) "TEXT TO VIDEO" SHOTS  (IDs starting with B)
+   1. Choose "Text to Video". Nothing to upload.
+   2. Set the aspect ratio, paste the prompt and generate.
+
+D) MAKING THE FINAL VERSION OF A SHOT
+   1. When a Fast draft looks good, switch the model to "Veo 3.1 - Quality".
+   2. Generate the same shot again (same image, same prompt).
+   3. Pick the better Quality take.
+   4. Click Download -> choose "Upscaled (1080p)" if offered.
+      (720p is also OK if 1080p isn't available.)
+
+E) SAVING (important - Claude finds the videos by their names)
+   1. Chrome saves to your Downloads folder with a random name.
+   2. Move the file into:  C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\
+   3. Rename it EXACTLY as listed in PART 3 (for example  S6-spa-sunset.mp4).
+   4. Tick the shot in PART 3 so you know where you are.
+
+
+==============================================================================
+PART 3 - ORDER OF WORK + EXACT FILE NAMES  (tick [x] as you go)
+==============================================================================
+
+ROUND 1 - most visible on the site (do these first)
+  [ ] S6  S6-spa-sunset.mp4   (Frames to Video, Landscape 16:9)
+  [ ] S2  S2-shower-rain.mp4   (Frames to Video, Portrait 9:16)
+  [ ] G2  G2-exclusive-rosegold-basin.mp4   (Frames to Video, Portrait 9:16)
+  [ ] G3  G3-altier-mist.mp4   (Frames to Video, Portrait 9:16)
+
+ROUND 2 - rest of the Sanitaryware page
+  [ ] S3  S3-shower-raincurtain.mp4   (Frames to Video, Portrait 9:16)
+  [ ] S4  S4-shower-cascade.mp4   (Frames to Video, Portrait 9:16)
+  [ ] S5  S5-ceiling-rain-dark.mp4   (Frames to Video, Landscape 16:9)
+  [ ] S1  S1-basin-mixer-marble.mp4   (Frames to Video, Landscape 16:9)
+  [ ] S8  S8-showroom.mp4   (Frames to Video, Landscape 16:9)
+  [ ] S7  S7-bathtub-garden.mp4   (Frames to Video, Landscape 16:9)
+
+ROUND 3 - new lifestyle scenes with real products
+  [ ] L1  L1-moonlight-travertine.mp4   (Ingredients to Video, Landscape 16:9)
+  [ ] L2  L2-morandi-dark-marble.mp4   (Ingredients to Video, Portrait 9:16)
+  [ ] L3  L3-champagne-limestone.mp4   (Ingredients to Video, Portrait 9:16)
+  [ ] L4  L4-silkrain-concrete-loft.mp4   (Ingredients to Video, Landscape 16:9)
+  [ ] L5  L5-rosegold-basin-gallery.mp4   (Ingredients to Video, Portrait 9:16)
+  [ ] L6  L6-concrete-basin-wabisabi.mp4   (Ingredients to Video, Landscape 16:9)
+
+ROUND 4 - brand b-roll (no product)
+  [ ] B1  B1-water-drop.mp4   (Text to Video, Landscape 16:9)
+  [ ] B2  B2-molten-brass.mp4   (Text to Video, Landscape 16:9)
+  [ ] B3  B3-light-through-water.mp4   (Text to Video, Landscape 16:9)
+
+
+==============================================================================
+PART 4 - ALL 19 SHOTS: WHAT TO UPLOAD, SETTINGS AND PROMPTS
+==============================================================================
+  Shots are listed in the order of PART 3.
+  "Upload" paths are exact. In Flow's upload window, browse to that file.
+
+------------------------------------------------------------------------------
+SHOT S6  |  Spa at sunset
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → Wellness section, full-screen
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S6-spa-sunset.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S6-spa-sunset.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic lifestyle film. A sculptural white freestanding spa bathtub on a wooden deck beside a calm sea at dusk. The sky glows in soft pink, violet and amber. Candles on the deck flicker gently; their warm light reflects on the tub's glossy curves. The sea surface shimmers with slow, gentle ripples, and a faint wisp of steam rises from the tub. A very slow, graceful camera push-in toward the bathtub. Serene, intimate, five-star resort atmosphere. Photorealistic, 4K, anamorphic cinema look. The bathtub keeps its exact shape and design. No people, no text, no logos. Audio: soft lapping water and a faint evening breeze.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT S2  |  Shower: Rain
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → Showers section, frame 1; also the gateway's Sanitaryware panel
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S2-shower-rain.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S2-shower-rain.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic product film. A wall-mounted luxury rain shower head in a dark gunmetal finish with a warm brass underside, set against a lush living green wall. Fine streams of water fall straight down from the shower head in a soft, even rain, droplets catching warm golden light and glittering as they fall. The camera performs a very slow, smooth push-in, almost imperceptible. Shallow depth of field, the green wall stays softly out of focus. Warm, natural, high-end hotel spa lighting. Photorealistic, shot on a cinema camera with a 50mm lens, 4K detail. The shower head stays perfectly still and its shape, finish and proportions do not change. No people, no hands, no text, no logos. Audio: gentle, steady rainfall only, no music.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT G2  |  Rose-gold basin
+------------------------------------------------------------------------------
+Where it goes on the site : Gateway → Exclusive panel; Exclusive site hero
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\G2-exclusive-rosegold-basin.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\G2-exclusive-rosegold-basin.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic product film. A cylindrical freestanding wash basin in matte black with a polished rose-gold rim and a rose-gold interior, standing alone in a dark, velvety studio. A soft, narrow beam of warm light slowly sweeps across the rose-gold rim, creating moving reflections that glide around the curve, while the matte black body absorbs the light. A very slow orbit of the camera around the basin. Minimal, exclusive, jewellery-like presentation. Photorealistic, 4K, macro detail. The basin keeps its exact shape, proportions and finishes. No people, no text, no logos. Audio: near silence with a soft, low ambient hum.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT G3  |  Mist in darkness
+------------------------------------------------------------------------------
+Where it goes on the site : Gateway → Altier panel; Altier site hero
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\G3-altier-mist.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\G3-altier-mist.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic product film. A sleek white ceiling shower panel releases two fine, cone-shaped mist sprays and a central column of droplets into absolute darkness. The mist drifts and swirls slowly, lit by a soft beam of light with a subtle warm pink glow at the edges; individual droplets glitter like jewels as they fall. Slow-motion, ultra-calm, mysterious. The camera holds almost still with a barely perceptible upward drift. Ultra-luxury, high-contrast, black background. Photorealistic, 4K. The shower panel stays perfectly fixed and unchanged. No people, no text, no logos. Audio: a whisper of fine mist.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT S3  |  Shower: Rain curtain
+------------------------------------------------------------------------------
+Where it goes on the site : Showers section, frame 2
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S3-shower-raincurtain.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S3-shower-raincurtain.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic product film. A luxury dual-function shower head in dark gunmetal with a brass underside, against a lush green living wall. Half of the head releases a soft rain while the front edge pours a smooth, glassy curtain of water. The water curtain ripples gently and sparkles in warm side light; droplets bounce softly at the bottom of the frame. Very slow, steady camera drift from left to right. Shallow depth of field, rich warm tones, high-end spa atmosphere. Photorealistic, 4K, cinema lens. The shower head does not move or change shape, finish or proportions. No people, no hands, no text, no logos. Audio: soft flowing water only.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT S4  |  Shower: Cascade
+------------------------------------------------------------------------------
+Where it goes on the site : Showers section, frame 3
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S4-shower-cascade.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S4-shower-cascade.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic product film. A luxury gunmetal-and-brass shower head mounted on a wall beside a green living wall, releasing a single thick, silky waterfall cascade from its front edge. The cascade flows in a smooth arc, glowing in warm golden backlight, with fine mist rising where it lands. Slow-motion feel, very slow camera push-in. Shallow depth of field, warm luxurious tones, calm and sculptural. Photorealistic, 4K, cinema lens. The shower head remains perfectly still and unchanged in shape, finish and size. No people, no hands, no text, no logos. Audio: a soft waterfall, no music.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT S5  |  Ceiling rain in the dark
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → Technology section background
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S5-ceiling-rain-dark.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S5-ceiling-rain-dark.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic product film. A large round ceiling-mounted rain shower in a dark, minimal luxury bathroom. A dense, even curtain of droplets falls straight down, lit from above with a cool, soft blue glow, each droplet sharp and glittering against deep black. Wisps of warm steam drift slowly through the light. A slow, steady upward camera tilt. Moody, architectural, high contrast, ultra-premium. Photorealistic, 4K. The shower head stays perfectly fixed and unchanged. No people, no hands, no text, no logos. Audio: soft rain on stone, no music.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT S1  |  Basin mixer on marble
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → statement section; also a faucet feature
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S1-basin-mixer-marble.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S1-basin-mixer-marble.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic product film. A sleek gunmetal basin mixer on a white Carrara marble vanity with an under-mounted basin, soft daylight from a window, a small diffuser and folded towels in the background. A clear, smooth, laminar stream of water flows from the spout into the basin, with gentle ripples and soft reflections on the marble. The camera glides very slowly sideways, revealing the mixer's silhouette. Calm, bright, editorial luxury interior, soft shadows, airy whites and warm greys. Photorealistic, 4K, macro-sharp detail on the metal. The faucet stays perfectly still and its exact shape and finish do not change. No people, no hands, no text, no logos. Audio: quiet running water.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT S8  |  AQUILO Experience Centre
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → Visit section / Experience Centres
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S8-showroom.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S8-showroom.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic architectural film inside a luxury bathroom showroom. Freestanding designer basins, sculpted stone pedestals and tall floor-mounted bath mixers are displayed under warm spotlights, with polished wooden floors and an illuminated brand wall. A very slow, smooth forward dolly through the space as the spotlights create gentle highlights on the metal and stone. Elegant, gallery-like, inviting. Photorealistic, 4K. All products, the wall signage and the architecture stay exactly as they are; do not invent new text. No people, no text overlays. Audio: quiet, calm room ambience.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT S7  |  Glass bathtub by the garden
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → Wellness alternative / second wellness shot
+Flow mode                 : Frames to Video
+Upload (start frame)      : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\frames\S7-bathtub-garden.jpg
+End frame (if offered)    : the SAME image again (makes a perfect loop)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\S7-bathtub-garden.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic lifestyle film. A modern acrylic whirlpool bathtub with a clear glass front panel, filled with softly bubbling turquoise water, in a bright bathroom that opens onto a green lawn and wooden deck. Gentle jets make the water swirl and sparkle; afternoon sunlight streams in and dances on the water. A slow, smooth sideways dolly along the bathtub. Fresh, airy, calm luxury. Photorealistic, 4K. The bathtub's shape and fittings stay exactly as they are. No people, no text, no logos. Audio: soft bubbling water, birdsong in the distance.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT L1  |  Moonlight wall mixer, travertine
+------------------------------------------------------------------------------
+Where it goes on the site : Collections → Moonlight
+Flow mode                 : Ingredients to Video
+Upload (ingredient)       : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\ingredients\I1-moonlight-brushed-rosegold-wall-mixer.png
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\L1-moonlight-travertine.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic luxury interior film featuring this exact wall-mounted basin mixer in brushed rose gold, installed on a warm travertine stone wall above a sculpted stone vessel basin. A smooth stream of water flows from the spout into the basin. Soft morning light falls from the side, creating long gentle shadows across the stone texture. The camera glides slowly closer to the mixer. Calm, warm, editorial, five-star hotel suite. Photorealistic, 4K. Keep the mixer's exact shape, round plate, lever and brushed rose-gold finish. No people, no text, no logos. Audio: quiet running water.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT L2  |  Morandi tall mixer, dark marble
+------------------------------------------------------------------------------
+Where it goes on the site : Collections → Morandi
+Flow mode                 : Ingredients to Video
+Upload (ingredient)       : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\ingredients\I2-morandi-rosegold-tall-mixer.png
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\L2-morandi-dark-marble.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic luxury interior film featuring this exact tall basin mixer in polished rose gold, standing on a dark green marble vanity beside a round white vessel basin. Water flows from the spout in a clear, glassy stream. Warm, low evening light with soft reflections on the rose gold and the veined marble. Very slow camera push-in toward the spout. Rich, moody, sophisticated. Photorealistic, 4K. Keep the mixer's exact square body, flat spout, lever and rose-gold finish. No people, no text, no logos. Audio: soft running water.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT L3  |  Champagne gold mixer, limestone
+------------------------------------------------------------------------------
+Where it goes on the site : Collections → Champagne Gold
+Flow mode                 : Ingredients to Video
+Upload (ingredient)       : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\ingredients\I3-champagne-gold-tall-mixer.png
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\L3-champagne-limestone.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic luxury interior film featuring this exact tall square basin mixer in champagne gold, on a pale limestone countertop with a white ceramic vessel basin, a sprig of dried pampas grass in a vase behind. Sunlight moves slowly across the scene; the champagne gold glows softly as light glides over its edges. Water begins to flow from the spout. Slow, smooth orbit around the mixer. Bright, celebratory, refined. Photorealistic, 4K. Keep the mixer's exact architectural square shape, lever and champagne-gold finish. No people, no text, no logos. Audio: gentle water.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT L4  |  Silk Rain steel grey, concrete loft
+------------------------------------------------------------------------------
+Where it goes on the site : Collections → Silk Rain
+Flow mode                 : Ingredients to Video
+Upload (ingredient)       : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\ingredients\I4-silkrain-steelgrey-mixer.png
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\L4-silkrain-concrete-loft.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic luxury interior film featuring this exact basin mixer in brushed steel grey, with its wide blade spout, on a polished concrete vanity in a minimalist loft bathroom with large windows. A wide, flat, silky sheet of water pours from the blade spout into a dark stone basin. Cool, soft daylight with gentle reflections. Very slow sideways camera glide. Architectural, calm, modern. Photorealistic, 4K. Keep the mixer's exact blade spout, lever and steel-grey finish. No people, no text, no logos. Audio: smooth flowing water.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT L5  |  Black & rose-gold basin, gallery
+------------------------------------------------------------------------------
+Where it goes on the site : Exclusive
+Flow mode                 : Ingredients to Video
+Upload (ingredient)       : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\ingredients\I5-black-rosegold-freestanding-basin.png
+Aspect ratio              : Portrait 9:16
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\L5-rosegold-basin-gallery.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic luxury interior film featuring this exact freestanding cylindrical basin in matte black with a polished rose-gold rim and interior, placed in a dim gallery-like bathroom with dark plaster walls and a single warm spotlight from above. A floor-mounted rose-gold mixer pours a thin stream of water into the basin. The spotlight slowly brightens, and reflections glide around the rose-gold rim. A very slow, low-angle orbit. Exclusive, sculptural, quiet. Photorealistic, 4K. Keep the basin's exact shape, proportions and finishes. No people, no text, no logos. Audio: a single stream of water in a quiet room.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT L6  |  Concrete vessel basin, wabi-sabi
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → Basins section
+Flow mode                 : Ingredients to Video
+Upload (ingredient)       : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\ingredients\I6-concrete-vessel-basin.png
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\L6-concrete-basin-wabisabi.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic luxury interior film featuring this exact cylindrical concrete vessel basin with its rough, porous grey texture, on a solid oak countertop in a calm wabi-sabi bathroom with lime-washed walls. A slim black wall spout pours water into the basin; soft sunlight through linen curtains moves across the concrete texture. A slow push-in to the basin's rim. Earthy, tactile, serene. Photorealistic, 4K. Keep the basin's exact shape and concrete texture. No people, no text, no logos. Audio: soft pouring water.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT B1  |  A single drop
+------------------------------------------------------------------------------
+Where it goes on the site : loader / transitions / social intro
+Flow mode                 : Text to Video
+Upload                    : nothing (text only)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\B1-water-drop.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Extreme macro cinematic shot in slow motion: a single crystal-clear drop of water falls onto a perfectly still, dark water surface, creating a perfect crown splash and widening concentric ripples that catch a warm champagne-gold rim light. Deep black background, ultra-sharp detail, luxurious and minimal. Photorealistic, 4K, high-speed camera look. No text, no logos. Audio: one soft, resonant water drop.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT B2  |  Molten brass
+------------------------------------------------------------------------------
+Where it goes on the site : Sanitaryware → Craft section
+Flow mode                 : Text to Video
+Upload                    : nothing (text only)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\B2-molten-brass.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cinematic slow-motion shot in a precision foundry: molten brass glowing bright orange-gold is poured from a crucible into a sand mould, sparks drifting, heat haze rippling the air. Dark industrial background, warm dramatic light, shallow depth of field. Then the camera slowly drifts closer to the glowing metal surface. Photorealistic, 4K, documentary-luxury tone like a high-end watch brand film. No people's faces, no text, no logos. Audio: deep low hum of the furnace and soft crackle.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+------------------------------------------------------------------------------
+SHOT B3  |  Light through water
+------------------------------------------------------------------------------
+Where it goes on the site : section transitions / Altier background
+Flow mode                 : Text to Video
+Upload                    : nothing (text only)
+Aspect ratio              : Landscape 16:9
+Model                     : Veo 3.1 Fast for drafts -> Quality for the final
+Save final download as    : C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\B3-light-through-water.mp4
+
+PROMPT (copy everything between the lines):
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Abstract cinematic shot: shimmering water caustics of light dance slowly across a polished black stone surface, rippling patterns of warm silver and soft champagne light flowing and merging. Very slow, hypnotic, calm. Camera locked off. Ultra-luxury, minimal, high contrast. Photorealistic, 4K. No objects, no text, no logos. Audio: very soft, distant water ambience.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+==============================================================================
+PART 5 - QUALITY CHECKLIST  (re-roll if ANY answer is "no")
+==============================================================================
+  [ ] Does the product keep its exact shape, proportions and finish?
+      (no extra handles, no bent or melted spout, no colour change)
+  [ ] Is the video free of text, letters, logos and watermarks?
+      (the real AQUILO sign in the S8 showroom is fine)
+  [ ] Is the video free of people, faces and hands?
+  [ ] Does the camera move slowly and smoothly? (no shaking, no sudden jumps or cuts)
+  [ ] Does the water look real? (not jelly, not flowing upwards, not frozen)
+  [ ] Are the first and last seconds calm? (needed for a smooth loop)
+
+
+==============================================================================
+PART 6 - IF SOMETHING GOES WRONG
+==============================================================================
+  The product changes shape
+    -> Re-roll. If it keeps happening, delete the camera-movement words from the prompt
+       (e.g. "slow orbit") and add: "The camera holds still."
+    -> For L shots: if the product still changes, skip that shot. The S and G shots matter more.
+
+  The image is cropped badly (product cut off)
+    -> Try the other aspect ratio, or move the crop so the product is centred.
+
+  Text or random letters appear
+    -> Re-roll. The prompts already say "no text", but sometimes it slips through.
+
+  There is no "end frame" option
+    -> Skip that step. Claude will make the loop.
+
+  Only 720p download is available
+    -> That's fine. Download 720p.
+
+  Running out of credits
+    -> Finish ROUND 1 and ROUND 2 on Fast, and only use Quality for S6, S2, G2 and G3.
+    -> The free backup is Google Colab: C:\Users\chetan\Downloads\Aquilo-revamp\ai\aquilo_wan22_colab.ipynb
+       (see the other guide; lower resolution but free).
+
+  Flow blocks or refuses a prompt
+    -> Remove the "Audio:" sentence at the end and try again. If it still refuses,
+       tell Claude which shot it was.
+
+
+==============================================================================
+PART 7 - WHEN YOU'RE DONE
+==============================================================================
+  1. Check that  C:\Users\chetan\Downloads\Aquilo-revamp\ai\flow\out\  contains your videos with the exact names from PART 3.
+     (You don't need all 19. Even only ROUND 1 is useful.)
+  2. Optional: if a take has a small problem (e.g. "white flash in first second"),
+     write it in a file called  notes.txt  in the same out\ folder.
+  3. Open Claude Code in VS Code and type:
+        Flow videos are in ai/flow/out
+  4. Claude will trim the start-up frames, make seamless loops, compress the videos
+     for the web (MP4 + WebM + poster image) and put each one in its place on the site.
+
+==============================================================================
+(Generated from GOOGLE-FLOW-PROMPTS.md - run  python ai/flow/build-procedure.py  to rebuild.)
+==============================================================================

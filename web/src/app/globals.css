@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+  AQUILO design language — one ecosystem, three levels of luxury.
+  Gateway: graphite + bone + champagne.  Sanitaryware (Luxury): warm stone + ink + bronze.
+  Exclusive (Extra Luxury): umber + champagne.  Altier (Ultra Luxury): black + steel.
+*/
+@theme {
+  --color-ink: #12110f;
+  --color-graphite: #1b1a17;
+  --color-smoke: #2a2825;
+  --color-bone: #ede8df;
+  --color-stone: #efebe4;
+  --color-sand: #e2dacd;
+  --color-clay: #cfc4b3;
+  --color-bronze: #9c7a4d;
+  --color-champagne: #c8a97e;
+  --color-umber: #2b231d;
+  --color-steel: #9a9a98;
+  --color-mist: #8b877f;
+
+  --font-display: var(--font-instrument), "Times New Roman", serif;
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+:root {
+  --gutter: clamp(16px, 4vw, 56px);
+  --header-h: 76px;
+}
+
+html {
+  background: var(--color-ink);
+  color: var(--color-bone);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-ink);
+  overflow-x: clip;
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+::selection { background: var(--color-champagne); color: var(--color-ink); }
+
+/* Editorial type helpers */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+}
+
+/* Masked line reveals for SplitText */
+.split-line-mask { overflow: clip; padding: 0 0.06em 0.14em; margin: 0 -0.06em -0.14em; }
+
+/* Product cut-outs (white backgrounds) sit on toned panels */
+.cutout { mix-blend-mode: multiply; }
+
+/* Underline link micro-interaction */
+.link-u { position: relative; }
+.link-u::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: right;
+  transition: transform 0.6s var(--ease-lux);
+}
+.link-u:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* Rolling text on hover: duplicated label slides up */
+.roll { display: inline-flex; overflow: clip; position: relative; }
+.roll > span { display: block; transition: transform 0.55s var(--ease-lux); }
+.roll > span + span { position: absolute; inset: 0; transform: translateY(105%); }
+.roll:hover > span:first-child, a:hover .roll > span:first-child, button:hover .roll > span:first-child { transform: translateY(-105%); }
+.roll:hover > span + span, a:hover .roll > span + span, button:hover .roll > span + span { transform: translateY(0); }
+
+/* Film grain overlay for depth */
+.grain::before {
+  content: ""; position: fixed; inset: -50%; z-index: 90; pointer-events: none; opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); } 20% { transform: translate(-3%, 2%); } 40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); } 80% { transform: translate(3%, 3%); } 100% { transform: translate(0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain::before { animation: none; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+}

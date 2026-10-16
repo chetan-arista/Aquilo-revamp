@@ -1,0 +1,12 @@
+{
+  "name": "aquilo-ai-motion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "free": "node generate-free.mjs"
+  },
+  "dependencies": {
+    "@gradio/client": "1.19.1",
+    "sharp": "^0.35.5"
+  }
+}
