@@ -78,7 +78,7 @@ export default function JourneyRail({ scope }: { scope: RefObject<HTMLElement | 
       </nav>
       {/* Mobile: thin progress line + current chapter */}
       <div aria-hidden className="pointer-events-none fixed inset-x-0 bottom-0 z-40 text-white mix-blend-difference lg:hidden">
-        <p className="eyebrow mb-2 ml-[var(--gutter)] text-[9px] opacity-70">{String(active + 1).padStart(2, "0")} — {chapters[active]}</p>
+        <p className="eyebrow mb-2 ml-[var(--gutter)] text-[9px] opacity-70">{String(active + 1).padStart(2, "0")}<span className="ml-3">{chapters[active]}</span></p>
         <span className="block h-px w-full bg-white/20"><span ref={mobileBar} className="block h-full origin-left bg-white" style={{ transform: "scaleX(0)" }} /></span>
       </div>
     </>

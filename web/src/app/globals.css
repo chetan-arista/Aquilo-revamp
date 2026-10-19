@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /*
-  AQUILO design language — one ecosystem, three levels of luxury.
-  Gateway: graphite + bone + champagne.  Sanitaryware (Luxury): warm stone + ink + bronze.
-  Exclusive (Extra Luxury): umber + champagne.  Altier (Ultra Luxury): black + steel.
+  AQUILO Altier design language: ultra luxury, built from shadow, stone and light.
+  Onyx and graphite surfaces, bone type, champagne metal as the only warm accent.
 */
 @theme {
-  --color-ink: #12110f;
+  --color-onyx: #070707;
+  --color-ink: #0d0d0d;
   --color-graphite: #1b1a17;
   --color-smoke: #2a2825;
   --color-bone: #ede8df;
@@ -32,7 +32,7 @@
 }
 
 html {
-  background: var(--color-ink);
+  background: var(--color-onyx);
   color: var(--color-bone);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -41,7 +41,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--color-ink);
+  background: var(--color-onyx);
   overflow-x: clip;
 }
 
@@ -70,8 +70,21 @@ html.lenis, html.lenis body { height: auto; }
 /* Masked line reveals for SplitText */
 .split-line-mask { overflow: clip; padding: 0 0.06em 0.14em; margin: 0 -0.06em -0.14em; }
 
-/* Product cut-outs (white backgrounds) sit on toned panels */
-.cutout { mix-blend-mode: multiply; }
+/* Product cut-outs float on dark stone: a soft contact shadow under every piece */
+.cutout { filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.55)); }
+/* ...and on warm paper, a soft gallery shadow */
+.cutout-light { filter: drop-shadow(0 28px 26px rgb(70 50 30 / 0.2)); }
+
+/* Outlined display type for oversized names */
+.outline-type { color: transparent; -webkit-text-stroke: 1px rgb(237 232 223 / 0.28); }
+
+/* Spotlight behind floating products */
+.spot { background: radial-gradient(ellipse 50% 45% at 50% 55%, rgb(255 236 210 / 0.10), transparent 70%); }
+
+/* The custom cursor replaces the system one on mouse and trackpad devices */
+@media (pointer: fine) {
+  html.lux-cursor, html.lux-cursor * { cursor: none !important; }
+}
 
 /* Underline link micro-interaction */
 .link-u { position: relative; }

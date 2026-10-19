@@ -7,3 +7,6 @@ scraped/download.log
 
 # Local MCP connector config (may contain API keys)
 .mcp.json
+
+# Photography extracted from the catalogue PDFs (regenerate: see web/scripts/export-catalogue.mjs)
+scraped/catalogue/

@@ -66,14 +66,14 @@ const out = (n) => decodeURI(new URL(n, OUT).pathname).replace(/^\/(\w:)/, "$1")
 
 for (const [name, file] of Object.entries(photos)) {
   await sharp(src(file)).rotate().resize({ width: 2400, height: 2400, fit: "inside", withoutEnlargement: true })
-    .webp({ quality: 78 }).toFile(out(`${name}.webp`));
+    .webp({ quality: 90, effort: 5 }).toFile(out(`${name}.webp`));
   console.log("photo", name);
 }
 for (const [name, file] of Object.entries(products)) {
   await sharp(src(file)).flatten({ background: "#ffffff" }).trim({ threshold: 12 })
     .extend({ top: 40, bottom: 40, left: 40, right: 40, background: "#ffffff" })
     .resize({ width: 1400, height: 1400, fit: "inside", withoutEnlargement: true })
-    .webp({ quality: 85 }).toFile(out(`p-${name}.webp`));
+    .webp({ quality: 90, effort: 5 }).toFile(out(`p-${name}.webp`));
   console.log("product", name);
 }
 for (const [name, [file, from]] of Object.entries(crops)) {
@@ -83,7 +83,7 @@ for (const [name, [file, from]] of Object.entries(crops)) {
   const half = await img.extract({ left, top: 0, width: width - left, height }).png().toBuffer();
   await sharp(half).trim({ threshold: 10 })
     .resize({ width: 1400, height: 1400, fit: "inside", withoutEnlargement: true })
-    .webp({ quality: 80 }).toFile(out(`${name}.webp`));
+    .webp({ quality: 90, effort: 5 }).toFile(out(`${name}.webp`));
   console.log("crop", name);
 }
 console.log("done →", join("public", "media"));

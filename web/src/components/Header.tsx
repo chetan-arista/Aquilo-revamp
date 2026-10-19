@@ -6,6 +6,7 @@ import { gsap, useGSAP, ScrollTrigger } from "@/lib/gsap";
 import { smoothScroll } from "@/lib/scroll";
 import Logo from "./Logo";
 import ScrambleText from "./ScrambleText";
+import { menu as siteMenu, quickLinks as siteLinks } from "@/data/site";
 
 export type MenuGroup = {
   title: string;
@@ -13,16 +14,16 @@ export type MenuGroup = {
 };
 
 type Props = {
-  /** Sub-brand shown next to the logo, e.g. "Sanitaryware". */
+  /** Sub-brand shown under the logo. */
   site?: string;
   homeHref?: string;
-  quickLinks: { label: string; href: string }[];
-  menu: MenuGroup[];
+  quickLinks?: { label: string; href: string }[];
+  menu?: MenuGroup[];
   /** Colour of the header while it floats transparently over the hero. */
   tone?: "light" | "dark";
 };
 
-export default function Header({ site, homeHref = "/", quickLinks, menu, tone = "light" }: Props) {
+export default function Header({ site = "Altier", homeHref = "/", quickLinks = siteLinks, menu = siteMenu, tone = "light" }: Props) {
   const bar = useRef<HTMLElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
@@ -79,7 +80,7 @@ export default function Header({ site, homeHref = "/", quickLinks, menu, tone = 
         ref={bar}
         data-solid="false"
         className={`group/h fixed inset-x-0 top-0 z-50 h-[var(--header-h)] transition-[background-color,color,backdrop-filter] duration-500 ${open ? "text-bone" : toneClass}
-          data-[solid=true]:bg-ink/55 data-[solid=true]:text-bone data-[solid=true]:backdrop-blur-xl`}
+          data-[solid=true]:bg-onyx/60 data-[solid=true]:text-bone data-[solid=true]:backdrop-blur-xl`}
       >
         <div className="mx-auto grid h-full grid-cols-[1fr_auto_1fr] items-center px-[var(--gutter)]">
           <button

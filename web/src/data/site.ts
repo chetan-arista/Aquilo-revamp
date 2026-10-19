@@ -1,8 +1,14 @@
-import catalog from "./catalog.json";
+import catalog from "./altier-collections.json";
 import type { MenuGroup } from "@/components/Header";
 
 const LEGACY = "https://www.aquilo.in";
 export const m = (name: string) => `/media/${name}.webp`;
+
+export const brand = {
+  name: "AQUILO Altier",
+  tier: "Ultra Luxury",
+  line: "Water, rendered as architecture.",
+};
 
 export const contact = {
   phone: "+91 93256 38368",
@@ -13,9 +19,9 @@ export const contact = {
 };
 
 export const centres = [
-  { city: "New Delhi", address: "Plot No-8, GF, Country Club Dr, Gadaipur, Ghitorni, New Delhi 110030", image: m("showroom-1") },
+  { city: "New Delhi", address: "Plot No 8, Ground Floor, Country Club Drive, Gadaipur, Ghitorni, New Delhi 110030", image: m("showroom-1") },
   { city: "Mumbai", address: "31 P, Laxmi Industrial Estate, Suresh Nagar, Andheri West, Mumbai 400053", image: m("showroom-2") },
-  { city: "Nagpur", address: "Himalay Harmony, W High Ct Rd, beside Neeri Gate, Laxminagar, Nagpur 440010", image: m("showroom-3") },
+  { city: "Nagpur", address: "Himalay Harmony, West High Court Road, beside Neeri Gate, Laxminagar, Nagpur 440010", image: m("showroom-3") },
 ];
 
 export const presence = [
@@ -23,219 +29,130 @@ export const presence = [
   "Karnataka", "Chhattisgarh", "West Bengal", "Mizoram", "Andhra Pradesh",
 ];
 
-/** The three AQUILO businesses — Luxury → Extra Luxury → Ultra Luxury. */
-export const businesses = [
-  {
-    key: "sanitaryware",
-    index: "01",
-    name: "Sanitaryware",
-    tier: "Luxury",
-    href: "/sanitaryware",
-    intro:
-      "The house's founding craft. Designer faucets, rain and mist showers, sculpted basins and wellness — composed as one complete bath suite since 2010.",
-    image: m("rain-gold-1"),
-    video: "rain-gold" as string | null,
-    tone: { bg: "#e9e3d9", fg: "#12110f", accent: "#9c7a4d" },
-  },
-  {
-    key: "exclusive",
-    index: "02",
-    name: "Exclusive",
-    tier: "Extra Luxury",
-    href: "/exclusive",
-    intro:
-      "A rarer register. Limited pieces, precious finishes and a quieter, more sophisticated language of material — reserved for the few.",
-    image: m("basin-dark-rosegold"),
-    video: "basin-rosegold" as string | null,
-    tone: { bg: "#2b231d", fg: "#ede8df", accent: "#c8a97e" },
-  },
-  {
-    key: "altier",
-    index: "03",
-    name: "Altier",
-    tier: "Ultra Luxury",
-    href: "/altier",
-    intro:
-      "The summit of the house. Water rendered as architecture — an ultra-luxury world of shadow, steel and light, revealed in motion.",
-    image: m("spray-dark-1"),
-    video: "spray-dark" as string | null,
-    tone: { bg: "#0a0a0a", fg: "#ede8df", accent: "#9a9a98" },
-  },
-] as const;
+export type Piece = { slug: string; type: string; code: string; size: string; area: string; image: string; w: number; h: number; source: string };
+export type Collection = {
+  slug: string; name: string; finish: string; line: string; story: string; tone: string; accent: string;
+  count: number; hero: string | null; pieces: Piece[]; source: string; paper: string;
+};
 
-/** Curated collection stories for the Sanitaryware homepage (collections, not categories). */
-export const collections = [
-  {
-    name: "Moonlight",
-    line: "Soft geometry, six finishes, one quiet glow.",
-    finishes: ["Chrome", "Black Matt", "Brush Gold", "Rose Gold", "Brushed Rose Gold", "Porcelain White"],
-    pieces: 67,
-    image: m("p-moonlight-rosegold"),
-    tone: "#e8dcd3",
-    href: `${LEGACY}/category/collections/colour-finish/moonlight-brushed-rose-gold-series/`,
-  },
-  {
-    name: "Morandi",
-    line: "Named for the painter of stillness. Pure cylinders, perfectly balanced.",
-    finishes: ["Chrome", "Gold", "Rose Gold", "Black Matt"],
-    pieces: 53,
-    image: m("p-morandi-rosegold"),
-    tone: "#e6ddd2",
-    href: `${LEGACY}/category/collections/colour-finish/morandi-rose-gold-series/`,
-  },
-  {
-    name: "Liberty",
-    line: "Classical proportions, re-cut for the modern bath.",
-    finishes: ["Chrome", "Oil-Rubbed Bronze", "Brush Brass", "Brush Nickel"],
-    pieces: 48,
-    image: m("p-liberty-chrome"),
-    tone: "#e3e2de",
-    href: `${LEGACY}/category/collections/chrome-finish/liberty-chrome-series/`,
-  },
-  {
-    name: "Silk Rain",
-    line: "A blade of water, falling like silk.",
-    finishes: ["Chrome", "Steel Grey"],
-    pieces: 25,
-    image: m("p-silkrain-steel"),
-    tone: "#dfe0df",
-    href: `${LEGACY}/category/collections/colour-finish/silk-rain-steel-grey-series/`,
-  },
-  {
-    name: "Champagne Gold",
-    line: "Architectural squares in a warm, celebratory gold.",
-    finishes: ["Champagne Gold"],
-    pieces: 13,
-    image: m("p-champagne-gold"),
-    tone: "#ebe2d2",
-    href: `${LEGACY}/category/collections/colour-finish/champagne-gold/`,
-  },
-  {
-    name: "Spring",
-    line: "Light, upright, effortless — the everyday made elegant.",
-    finishes: ["Chrome", "Brush Gold"],
-    pieces: 14,
-    image: m("p-spring-chrome"),
-    tone: "#e4e3e0",
-    href: `${LEGACY}/category/collections/chrome-finish/spring-series/`,
-  },
-  {
-    name: "Lute",
-    line: "Curves drawn like an instrument, tuned to the hand.",
-    finishes: ["Chrome"],
-    pieces: 8,
-    image: m("p-lute-chrome"),
-    tone: "#e2e1dd",
-    href: `${LEGACY}/category/collections/chrome-finish/lute-collections/`,
-  },
-  {
-    name: "PEI Gold",
-    line: "Faceted, ornamental, unapologetically gold.",
-    finishes: ["Gold"],
-    pieces: 20,
-    image: m("p-pei-gold"),
-    tone: "#ece3d1",
-    href: `${LEGACY}/category/collections/colour-finish/pei-gold-series/`,
-  },
-] as const;
+/** Warm paper tones for the collections on beige pages (the dark `tone` is used on black ones). */
+const PAPER: Record<string, string> = {
+  moonlight: "#e8dcd3", morandi: "#e6ddd2", "champagne-gold": "#ebe2d2", pei: "#ece3d1",
+  "silk-rain": "#dfe0df", liberty: "#e6dfd2", copper: "#e8dacd",
+};
+
+/** The Altier collections: the most luxurious finishes of the AQUILO range, each piece cut out of its studio background. */
+export const collections = (catalog as Omit<Collection, "paper">[]).map((c) => ({ ...c, paper: PAPER[c.slug] ?? "#e9e3d9" })) as Collection[];
+export const collectionBySlug = (slug: string) => collections.find((c) => c.slug === slug);
 
 export const technologies = [
-  { value: "38°", unit: "C", title: "Thermostatic safety", body: "VERNET thermostatic valve holds a constant temperature; the 38℃ safety button and anti-scald shut-off protect every shower." },
-  { value: "20", unit: "%", title: "Air-in rain", body: "Air is drawn into every droplet — a fuller, softer rain that uses a fifth less water." },
-  { value: "0", unit: "Pb", title: "Lead free", body: "Faucets pass cUPC guidelines; kitchen faucets are certified safe for drinking water." },
-  { value: "1", unit: "touch", title: "Smart touch kitchen", body: "Electronic touch control — one touch to open, one touch to close." },
+  { value: "38", unit: "°C", title: "Thermostatic safety", body: "A VERNET thermostatic valve holds the temperature you choose. The 38°C safety button and anti scald shut off protect every shower." },
+  { value: "20", unit: "%", title: "Air in rain", body: "Air is drawn into every droplet for a fuller, softer rain that uses a fifth less water." },
+  { value: "0", unit: "Pb", title: "Lead free", body: "Faucets meet cUPC guidelines, and kitchen faucets are certified safe for drinking water." },
+  { value: "5", unit: "modes", title: "Ceiling showers", body: "Rain, rain curtain, spray, mist and waterfall, concealed in the ceiling and governed by one thermostat." },
 ] as const;
 
-/**
- * Hero product model for the Sanitaryware 3D scene. Set to a GLB in /public/models (e.g. an image-to-3D
- * reconstruction of a real AQUILO mixer) to replace the procedural mixer; null keeps the procedural one.
- */
+/** Hero product model for the Tap Studio. A GLB in /public/models replaces the procedural mixer; null keeps it. */
 export const heroModel: string | null = null;
 
 export const finishes = [
+  { name: "Champagne Gold", color: "#d6b87e", roughness: 0.2, metalness: 1 },
+  { name: "Brushed Rose Gold", color: "#d8a28a", roughness: 0.3, metalness: 1 },
+  { name: "Matt Black", color: "#1b1a19", roughness: 0.5, metalness: 0.55 },
+  { name: "Steel Grey", color: "#8e9296", roughness: 0.28, metalness: 1 },
   { name: "Polished Chrome", color: "#e9eaec", roughness: 0.06, metalness: 1 },
-  { name: "Luxury Gold", color: "#d9b36c", roughness: 0.16, metalness: 1 },
-  { name: "Rose Gold", color: "#dca48c", roughness: 0.18, metalness: 1 },
-  { name: "Matt Black", color: "#1d1c1b", roughness: 0.55, metalness: 0.5 },
-  { name: "Brushed Nickel", color: "#b9b6ae", roughness: 0.32, metalness: 1 },
 ] as const;
 
-// ——— Navigation hierarchy (links point to the live catalogue until inner pages are built) ———
+/** The finish line up from the catalogue, left to right as photographed. */
+export const finishLine = [
+  { name: "Polished Chrome", collection: "silk-rain", x: 20, y: 78 },
+  { name: "Gold", collection: "pei", x: 25.5, y: 67 },
+  { name: "Matt Black", collection: "morandi", x: 36.5, y: 61 },
+  { name: "Rose Gold", collection: "moonlight", x: 49.5, y: 48 },
+  { name: "Copper", collection: "copper", x: 62, y: 36 },
+  { name: "Gun Metal", collection: "silk-rain", x: 74.5, y: 25 },
+];
 
-type CatalogItem = { name: string; link: string; count: number };
-const cat = catalog as {
-  collections: { finish: string; items: CatalogItem[] }[];
-  products: { group: string; items: CatalogItem[] }[];
-};
+export const craftSteps = [
+  { n: "01", t: "Brass ingot", d: "High standard brass, chosen for strength and longevity.", img: m("craft-ingot") },
+  { n: "02", t: "Sand core", d: "Precise sand cores define every internal waterway.", img: m("craft-core") },
+  { n: "03", t: "Casting", d: "Pressure, speed and temperature, precisely controlled.", img: m("craft-casting") },
+  { n: "04", t: "Machining", d: "CNC precision, then the human eye.", img: m("craft-machining") },
+  { n: "05", t: "Polishing", d: "Robotic finesse meets the craftsman's hand.", img: m("craft-polishing") },
+  { n: "06", t: "Plating", d: "Automated electroplating for an enduring glow.", img: m("craft-plating") },
+  { n: "07", t: "Assembly", d: "Inspected, tested and sealed. Nothing left unturned.", img: m("craft-assembly") },
+];
 
-const productImages: Record<string, string> = {
-  Faucets: m("hero-basin"),
-  Showers: m("rain-gold-2"),
-  Basins: m("basin-concrete"),
-  Toilets: m("showroom-3"),
-  Wellness: m("spa-sunset"),
-  "Controllers & Diverters": m("ceiling-shower"),
-};
+export const showerModes = [
+  { key: "rain", word: "Rain", line: "Air filled droplets, full and soft.", img: m("cat-rain-gold-dark") },
+  { key: "mist", word: "Mist", line: "A warm cloud that settles on the skin.", img: m("cat-mist-shower") },
+  { key: "cascade", word: "Cascade", line: "A curtain of water, falling as one.", img: m("cat-cascade-shower") },
+] as const;
 
-const productSlugs: Record<string, string> = {
-  Faucets: "faucets",
-  Showers: "showers",
-  Basins: "table-top-basins",
-  Toilets: "toilets",
-  Wellness: "bathtub-jaccuzi",
-  "Controllers & Diverters": "controllers-and-diverters",
-};
+export const spaces = [
+  { key: "shower", name: "The Shower", line: "Ceiling rain, mist and cascade, under one thermostat.", image: m("cat-rain-column-gold"), href: "/#showers" },
+  { key: "basin", name: "The Basin", line: "Sculpted mixers over stone, concrete and glass.", image: m("cat-gold-pour"), href: "/#tap" },
+  { key: "bath", name: "The Bath", line: "Free standing tubs, steam and spa for slow rituals.", image: m("cat-blush-tub"), href: "/#wellness" },
+] as const;
 
-export const sanitarywareMenu: MenuGroup[] = [
+export const basins = [
+  { name: "Free standing basin", finish: "Black and rose gold", image: m("basin-dark-rosegold") },
+  { name: "Concrete vessel", finish: "Hand cast", image: m("basin-concrete") },
+  { name: "Vessel basin", finish: "Gloss black ceramic", image: m("cat-black-vessel") },
+];
+
+// ——— Navigation ———
+
+export const quickLinks = [
+  { label: "Collections", href: "/collections" },
+  { label: "Our World", href: "/world" },
+  { label: "Visit", href: "/visit" },
+];
+
+export const menu: MenuGroup[] = [
   {
     title: "Collections",
-    links: collections.map((c) => ({ label: c.name, href: c.href, meta: `${c.finishes.length} finish${c.finishes.length > 1 ? "es" : ""}`, image: c.image })),
+    links: [
+      ...collections.map((c) => ({ label: c.name, href: `/collections/${c.slug}`, meta: c.finish, image: c.hero ?? undefined })),
+      { label: "All collections", href: "/collections", image: m("ceiling-shower") },
+    ],
   },
   {
-    title: "Products",
-    links: cat.products.map((g) => ({
-      label: g.group,
-      href: `${LEGACY}/category/${productSlugs[g.group] ?? ""}/`,
-      meta: String(g.items.reduce((a, i) => a + i.count, 0)),
-      image: productImages[g.group],
-    })),
+    title: "Experience",
+    links: [
+      { label: "The Rain", href: "/#rain", image: m("cat-rain-gold-dark") },
+      { label: "The Tap Studio", href: "/#tap", image: m("cat-copper-wall-pour") },
+      { label: "Finishes", href: "/#finishes", image: m("cat-finishes") },
+      { label: "Showers", href: "/#showers", image: m("cat-rain-column-gold") },
+      { label: "Wellness", href: "/#wellness", image: m("cat-jacuzzi-night") },
+      { label: "Basins", href: "/#basins", image: m("basin-concrete") },
+    ],
   },
   {
     title: "The House",
     links: [
-      { label: "Brand Story", href: `${LEGACY}/brand-story/`, image: m("columns") },
-      { label: "Innovative Technologies", href: "/sanitaryware#technology", image: m("spray-dark-2") },
-      { label: "Craftsmanship", href: "/sanitaryware#craft", image: m("craft-casting") },
+      { label: "Our World", href: "/world", image: m("columns") },
+      { label: "Craftsmanship", href: "/world#craft", image: m("craft-casting") },
+      { label: "Technology", href: "/world#technology", image: m("cat-led-rain") },
       { label: "Product Care", href: `${LEGACY}/product-care-guidelines/` },
       { label: "Catalogue", href: `${LEGACY}/catalog/` },
-      { label: "Journal", href: `${LEGACY}/blog/` },
     ],
   },
   {
     title: "Visit",
     links: [
-      ...centres.map((c) => ({ label: c.city, href: "/sanitaryware#visit", meta: "Experience Centre", image: c.image })),
-      { label: "Contact", href: `${LEGACY}/contact-us/` },
-      { label: "Customer Care", href: `${LEGACY}/customer-care/` },
-    ],
-  },
-  {
-    title: "The AQUILO World",
-    links: businesses.map((b) => ({ label: `AQUILO ${b.name}`, href: b.href, meta: b.tier, image: b.image })),
-  },
-];
-
-/** Full category hierarchy, used for the footer index. */
-export const catalogIndex = cat;
-
-export const gatewayMenu: MenuGroup[] = [
-  { title: "The AQUILO World", links: businesses.map((b) => ({ label: b.name, href: b.href, meta: b.tier, image: b.image })) },
-  {
-    title: "The House",
-    links: [
-      { label: "Brand Story", href: `${LEGACY}/brand-story/`, image: m("columns") },
-      { label: "Experience Centres", href: "/sanitaryware#visit", image: m("showroom-1") },
-      { label: "Contact", href: `${LEGACY}/contact-us/` },
+      ...centres.map((c) => ({ label: c.city, href: "/visit", meta: "Experience Centre", image: c.image })),
+      { label: "Private appointment", href: "/visit#appointment", image: m("cat-dark-suite") },
     ],
   },
 ];
+
+/** Page names used by the page transition curtain. */
+export function pageLabel(path: string): { eyebrow: string; title: string } {
+  const [, a, b] = path.split("/");
+  if (a === "collections" && b) return { eyebrow: "Collection", title: collectionBySlug(b)?.name ?? "Collection" };
+  if (a === "collections") return { eyebrow: "AQUILO Altier", title: "Collections" };
+  if (a === "world") return { eyebrow: "AQUILO Altier", title: "Our World" };
+  if (a === "visit") return { eyebrow: "AQUILO Altier", title: "Visit" };
+  return { eyebrow: "AQUILO", title: "Altier" };
+}

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 
-const GLYPHS = "AQUILO◦·—/\\#*+";
+const GLYPHS = "AQUILO◦·/\\#*+";
 
 /** Label that scrambles through glyphs on hover before settling (nav micro-interaction). */
 export default function ScrambleText({ text, className }: { text: string; className?: string }) {

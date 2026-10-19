@@ -1,5 +1,5 @@
-import GatewayHome from "@/components/gateway/GatewayHome";
+import AltierHome from "@/components/altier/AltierHome";
 
 export default function Page() {
-  return <GatewayHome />;
+  return <AltierHome />;
 }
