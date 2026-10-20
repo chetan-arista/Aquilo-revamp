@@ -10,3 +10,9 @@ scraped/download.log
 
 # Photography extracted from the catalogue PDFs (regenerate: see web/scripts/export-catalogue.mjs)
 scraped/catalogue/
+
+# Third-party 360 panoramas for local feature testing only — never publish
+test-assets/
+
+# Python bytecode (Blender-run CAD scripts)
+__pycache__/

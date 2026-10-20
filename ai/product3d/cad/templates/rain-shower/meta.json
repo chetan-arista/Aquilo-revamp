@@ -1,0 +1,12 @@
+{
+  "label": "Overhead shower",
+  "description": "Round rain shower head on a wall arm.",
+  "size": { "key": "headDiameterMm", "label": "Head diameter (mm)", "default": 200 },
+  "views": [
+    { "name": "three-quarter", "label": "Front, slightly below", "required": true, "pitch": [-45, 5] }
+  ],
+  "finishes": ["chrome", "brushed nickel", "matte black"],
+  "mount": "hanging",
+  "render": { "elevation": "photo", "floor": false, "axis": "center" },
+  "secondsPerFrame": 8
+}

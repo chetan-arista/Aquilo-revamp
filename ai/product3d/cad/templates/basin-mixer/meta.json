@@ -1,0 +1,14 @@
+{
+  "label": "Basin mixer",
+  "description": "Single lever basin mixer: round body, spout, lever on top.",
+  "size": { "key": "heightMm", "label": "Height (mm)", "default": 160 },
+  "views": [
+    { "name": "side", "label": "Side, spout to the left", "required": true },
+    { "name": "side-b", "label": "Other side (optional)", "flip": true },
+    { "name": "three-quarter", "label": "Front three quarter", "required": true }
+  ],
+  "finishes": ["chrome", "brushed nickel", "matte black"],
+  "mount": "floor",
+  "render": { "elevation": 12, "floor": true },
+  "secondsPerFrame": 28
+}

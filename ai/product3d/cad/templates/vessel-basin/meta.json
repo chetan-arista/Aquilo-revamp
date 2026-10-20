@@ -1,0 +1,12 @@
+{
+  "label": "Countertop basin",
+  "description": "Round countertop basin (bowl, egg or cone).",
+  "size": { "key": "widthMm", "label": "Width across (mm)", "default": 400 },
+  "views": [
+    { "name": "three-quarter", "label": "Three quarter from above", "required": true, "pitch": [5, 70] }
+  ],
+  "finishes": ["gloss white", "matte black", "matte stone"],
+  "mount": "floor",
+  "render": { "elevation": "photo", "floor": true },
+  "secondsPerFrame": 42
+}

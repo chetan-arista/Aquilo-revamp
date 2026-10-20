@@ -124,6 +124,7 @@ export const menu: MenuGroup[] = [
       { label: "The Tap Studio", href: "/#tap", image: m("cat-copper-wall-pour") },
       { label: "Finishes", href: "/#finishes", image: m("cat-finishes") },
       { label: "Showers", href: "/#showers", image: m("cat-rain-column-gold") },
+      { label: "The GoSlide film", href: "/#film", image: "/media/video/goslide-teaser.jpg" },
       { label: "Wellness", href: "/#wellness", image: m("cat-jacuzzi-night") },
       { label: "Basins", href: "/#basins", image: m("basin-concrete") },
     ],

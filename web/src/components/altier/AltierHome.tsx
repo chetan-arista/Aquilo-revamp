@@ -10,6 +10,7 @@ import TapStudio from "./TapStudio";
 import CollectionsJourney from "./CollectionsJourney";
 import Finishes from "./Finishes";
 import ShowerModes from "./ShowerModes";
+import Film from "./Film";
 import Wellness from "./Wellness";
 import Basins from "./Basins";
 import Craft from "./Craft";
@@ -30,6 +31,7 @@ export default function AltierHome() {
         <CollectionsJourney />
         <Finishes />
         <ShowerModes />
+        <Film />
         <Wellness />
         <Basins />
         <Craft />
