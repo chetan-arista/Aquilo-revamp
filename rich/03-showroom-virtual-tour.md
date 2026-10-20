@@ -1,7 +1,41 @@
 # Feature 3: Showroom virtual tour (360 panoramas with shoppable products)
 
-Status: **planned, not started** (written 2026-10-19). A brief for whoever builds it, including Claude
-in a later session.
+Status: **pilot built on test panoramas (2026-10-20)**, waiting for AQUILO's own showroom captures. A brief
+for whoever continues it, including Claude in a later session.
+
+## Built so far (2026-10-20)
+- **`PanoramaViewer`** (`web/src/components/gl/PanoramaViewer.tsx`) gained: HTML `markers` + `renderMarker`
+  (positioned every frame, hidden behind the viewer, real buttons), a `handle` ref with `lookAt(target, s)`
+  and `getView()`, `startView` per panorama, and the walk transition (during the crossfade the camera eases to
+  the next spot's start view with a small push in). It adds `relative` to its box only when the caller has not
+  positioned it (both together collapsed the box to the default 150 px canvas).
+- **`ProductQuickView`** (`components/altier/ProductQuickView.tsx`): the collection page quick view, shared;
+  `CollectionDetail` now uses it unchanged, the tour opens the same one with a "On display at …" line.
+  `pieceBySlug()` in `data/site.ts` resolves a product slug to its piece and collection.
+- **`ShowroomTour`** (`components/altier/ShowroomTour.tsx`): spots, glowing product markers with a hover card
+  (tap once on touch, tap again to open), link arrows to other spots ("Face the doorway, then step through"),
+  "In this room" list (lookAt + card), spot strip, Book a visit, Directions, Close, first visit hint, reduced
+  motion (no auto rotate), preloading of the next spots, deep links `?spot=&product=`.
+- **Data types** `web/src/data/showrooms.ts` (`Tour`, `TourSpot`, `TourMarker`, `tours`, `centreSlug`).
+- **Dev-only tools**: the editor **`/lab/360/editor`** (add spots from panoramas, "Pin a product" with catalogue
+  search, "Pin a link", start view, tour start, save, play, Export JSON) and the player **`/lab/tour?id=demo`**.
+  Tours are saved to the git-ignored `test-assets/360/tours/<id>.json` by `app/lab/360/tours/[id]/route.ts`.
+- **Demo tour** (`test-assets/360/tours/demo.json`): four test panoramas (vanity gallery, shower room, spa
+  suite, utility) with 10 product markers on real fixtures and links between them. Tested: hover card, quick
+  view, walking, the room list, phone layout and the deep link.
+
+## Going live when AQUILO's panoramas arrive
+1. Shoot each centre (capture checklist below), put the images in `scraped/showrooms/<centre>/` (git ignored),
+   export WebP to `web/public/media/showrooms/<centre>/<spot>.webp` (later: tiles and a 2048 px preview).
+2. Make the tour in `/lab/360/editor` with those images, Export JSON to `web/src/data/showrooms/<centre>.json`
+   (the export already rewrites panorama paths to `/media/showrooms/<centre>/<spot>.webp`), and register it in
+   `tours` in `data/showrooms.ts`.
+3. Add the route `app/visit/[centre]/page.tsx` (generateStaticParams over `Object.keys(tours)`, params read
+   inside Suspense like `collections/[slug]`) rendering `<ShowroomTour tour={…} />`, and a "Walk through the
+   showroom" button on `/visit` and the centre cards for centres that have a tour.
+4. Still to do then: progressive loading (preview, then full), tiles for 12k panoramas, the AI marker proposals.
+Known data issue (not the tour): some scraped catalogue names read "Product Code: …"; the client's product data
+replaces them.
 
 ## Context for whoever picks this up
 - Site: AQUILO Altier, Next.js 16 app in `web/` (read `web/AGENTS.md`). three.js via React Three Fiber,

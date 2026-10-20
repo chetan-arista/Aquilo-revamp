@@ -44,6 +44,14 @@ const PAPER: Record<string, string> = {
 /** The Altier collections: the most luxurious finishes of the AQUILO range, each piece cut out of its studio background. */
 export const collections = (catalog as Omit<Collection, "paper">[]).map((c) => ({ ...c, paper: PAPER[c.slug] ?? "#e9e3d9" })) as Collection[];
 export const collectionBySlug = (slug: string) => collections.find((c) => c.slug === slug);
+/** A piece and its collection by the piece's slug (the showroom tour refers to products this way). */
+export const pieceBySlug = (slug: string) => {
+  for (const c of collections) {
+    const piece = c.pieces.find((p) => p.slug === slug);
+    if (piece) return { piece, collection: c };
+  }
+  return null;
+};
 
 export const technologies = [
   { value: "38", unit: "°C", title: "Thermostatic safety", body: "A VERNET thermostatic valve holds the temperature you choose. The 38°C safety button and anti scald shut off protect every shower." },

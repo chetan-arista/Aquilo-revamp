@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { gsap, useGSAP, SplitText, onIntroDone } from "@/lib/gsap";
-import { smoothScroll } from "@/lib/scroll";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrubText from "@/components/ScrubText";
 import Link from "@/components/transition/TransitionLink";
 import Arrow from "@/components/Arrow";
-import { collections, contact, type Collection, type Piece } from "@/data/site";
+import ProductQuickView from "@/components/altier/ProductQuickView";
+import { collections, type Collection, type Piece } from "@/data/site";
 
 /**
  * One collection: the hero piece floats in its own light and tilts with the cursor; the pieces can be
@@ -65,14 +65,7 @@ export default function CollectionDetail({ collection: c }: { collection: Collec
     return () => window.removeEventListener("pointermove", onMove);
   }, []);
 
-  // Quick view: lock the page scroll and close on Escape.
-  useEffect(() => {
-    if (!open) return;
-    smoothScroll.stop();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(null);
-    window.addEventListener("keydown", onKey);
-    return () => { smoothScroll.start(); window.removeEventListener("keydown", onKey); };
-  }, [open]);
+  const closeQuickView = useCallback(() => setOpen(null), []);
 
   return (
     <div ref={root} className="bg-onyx text-bone">
@@ -167,35 +160,7 @@ export default function CollectionDetail({ collection: c }: { collection: Collec
       </main>
       <Footer />
 
-      {/* Quick view */}
-      <div role="dialog" aria-modal="true" aria-label={open ? `${open.type} ${open.code}` : undefined}
-        className={`fixed inset-0 z-[60] grid transition-[opacity,visibility] duration-700 md:grid-cols-[1.3fr_1fr] ${open ? "visible opacity-100" : "invisible opacity-0"}`}>
-        <button aria-label="Close" onClick={() => setOpen(null)} className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
-        {open && (
-          <>
-            <div className="relative hidden md:block" style={{ background: `radial-gradient(ellipse 60% 55% at 50% 50%, ${c.tone}, #070707 80%)` }}>
-              <div className="absolute inset-[12%]"><Image src={open.image} alt="" fill sizes="50vw" quality={90} className="cutout object-contain" /></div>
-            </div>
-            <aside className="relative flex flex-col justify-between bg-graphite p-[var(--gutter)] pt-[calc(var(--header-h)+4vh)]" data-lenis-prevent>
-              <div>
-                <div className="relative mb-8 aspect-square md:hidden"><Image src={open.image} alt="" fill sizes="90vw" quality={90} className="cutout object-contain" /></div>
-                <p className="eyebrow mb-4" style={{ color: c.accent }}>{c.name} · {c.finish}</p>
-                <h3 className="display text-5xl md:text-6xl">{open.type}</h3>
-                <dl className="mt-10 divide-y divide-bone/10 border-y border-bone/10 text-sm">
-                  {[["Product code", open.code], ["Room", open.area], ["Size", open.size], ["Finish", c.finish]].filter(([, v]) => v).map(([k, v]) => (
-                    <div key={k} className="flex justify-between py-4"><dt className="text-bone/50">{k}</dt><dd>{v}</dd></div>
-                  ))}
-                </dl>
-              </div>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <a href={`mailto:${contact.email}?subject=${encodeURIComponent(`Enquiry: ${open.type} ${open.code} (${c.name})`)}`} className="eyebrow rounded-full bg-bone px-6 py-4 text-onyx transition-colors duration-500 hover:bg-champagne">Enquire</a>
-                <a href={open.source} target="_blank" rel="noreferrer" className="eyebrow rounded-full border border-bone/25 px-6 py-4 transition-colors duration-500 hover:border-bone">Specifications</a>
-                <button onClick={() => setOpen(null)} className="eyebrow px-4 py-4 text-bone/60 hover:text-bone">Close</button>
-              </div>
-            </aside>
-          </>
-        )}
-      </div>
+      <ProductQuickView piece={open} collection={open ? c : null} onClose={closeQuickView} />
     </div>
   );
 }

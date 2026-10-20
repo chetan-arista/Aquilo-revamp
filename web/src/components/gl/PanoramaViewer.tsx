@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Billboard } from "@react-three/drei";
-import { useEffect, useEffectEvent, useMemo, useRef } from "react";
+import { useEffect, useEffectEvent, useImperativeHandle, useMemo, useRef, type ReactNode, type Ref, type RefObject } from "react";
 import * as THREE from "three";
 import { gsap } from "@/lib/gsap";
 
@@ -10,6 +10,10 @@ import { gsap } from "@/lib/gsap";
 export type PanoLook = { yaw: number; pitch: number };
 export type PanoView = PanoLook & { fov: number };
 export type PanoPick = PanoLook & { u: number; v: number };
+/** Something placed in the panorama: drawn as HTML (renderMarker) that follows the view. */
+export type PanoMarker = PanoLook & { id: string };
+/** Imperative controls (pass a ref): turn the camera smoothly to a direction, or read where it looks. */
+export type PanoHandle = { lookAt: (target: PanoLook & { fov?: number }, seconds?: number) => void; getView: () => PanoView };
 
 const MIN_FOV = 30, MAX_FOV = 100, DEFAULT_FOV = 75, ZOOM_FOV = 40;
 const MAX_LAT = THREE.MathUtils.degToRad(85);
@@ -49,10 +53,13 @@ type SphereProps = {
   src: string;
   autoRotate: boolean;
   resetKey: number;
-  pins: PanoLook[];
+  pins?: PanoLook[];
+  /** Where the view starts for this src (on load, on resetKey and when walking to another panorama). */
+  startView?: Partial<PanoView>;
   onView?: (v: PanoView) => void;
   onPick?: (p: PanoPick) => void;
   onStatus?: (s: "loading" | "ready" | "error") => void;
+  handle?: Ref<PanoHandle>;
 };
 
 /**
@@ -60,7 +67,7 @@ type SphereProps = {
  * drag with inertia, wheel / pinch / double-click zoom, arrow keys, auto-rotate after a pause,
  * and a short click that reports the yaw / pitch (and image u / v) under the pointer.
  */
-function PanoSphere({ src, autoRotate, resetKey, pins, onView, onPick, onStatus }: SphereProps) {
+function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, onPick, onStatus, handle }: SphereProps) {
   const gl = useThree((s) => s.gl);
   const camera = useThree((s) => s.camera);
   const mat = useRef<THREE.ShaderMaterial>(null);
@@ -71,6 +78,25 @@ function PanoSphere({ src, autoRotate, resetKey, pins, onView, onPick, onStatus 
   const status = useEffectEvent((s: "loading" | "ready" | "error") => onStatus?.(s));
   const pick = useEffectEvent((p: PanoPick) => onPick?.(p));
   const report = useEffectEvent((v: PanoView) => onView?.(v));
+  const start = useEffectEvent(() => ({ yaw: startView?.yaw ?? 0, pitch: startView?.pitch ?? 0, fov: startView?.fov ?? DEFAULT_FOV }));
+
+  // Ease lon / lat / fov to a direction, the short way round.
+  const turnTo = (target: PanoLook & { fov?: number }, seconds: number) => {
+    const v = view.current;
+    gsap.killTweensOf(v);
+    v.vLon = v.vLat = 0;
+    gsap.to(v, {
+      lon: v.lon + rad(wrapDeg(target.yaw - deg(v.lon))),
+      lat: rad(THREE.MathUtils.clamp(target.pitch, -deg(MAX_LAT), deg(MAX_LAT))),
+      targetFov: THREE.MathUtils.clamp(target.fov ?? v.targetFov, MIN_FOV, MAX_FOV),
+      duration: seconds, ease: "power3.inOut",
+      onUpdate: () => { v.lastInput = performance.now(); },
+    });
+  };
+  useImperativeHandle(handle, () => ({
+    lookAt: (target, seconds = 1.1) => turnTo(target, seconds),
+    getView: () => ({ yaw: wrapDeg(deg(view.current.lon)), pitch: deg(view.current.lat), fov: view.current.fov }),
+  }));
 
   // Load: decode off the main thread, shrink to the GPU's limit if needed, upload, then crossfade.
   useEffect(() => {
@@ -102,6 +128,15 @@ function PanoSphere({ src, autoRotate, resetKey, pins, onView, onPick, onStatus 
       }
       u.uB.value = tex;
       u.uMix.value = 0;
+      // Walking to another panorama: during the crossfade the camera eases to the new spot's start view with a
+      // small push in and back, so it feels like a step forward rather than a cut. The first load just jumps.
+      const s = start();
+      if (u.uA.value) {
+        turnTo({ ...s, fov: s.fov * 0.88 }, 0.75);
+        gsap.delayedCall(0.75, () => { view.current.targetFov = s.fov; });
+      } else {
+        Object.assign(view.current, { lon: rad(s.yaw), lat: rad(s.pitch), fov: s.fov, targetFov: s.fov, vLon: 0, vLat: 0, lastInput: performance.now() });
+      }
       gsap.to(u.uMix, {
         value: 1,
         duration: u.uA.value ? 0.9 : 0.6,
@@ -119,6 +154,7 @@ function PanoSphere({ src, autoRotate, resetKey, pins, onView, onPick, onStatus 
   }, [src, gl]);
 
   useEffect(() => () => {
+    gsap.killTweensOf(view.current);
     const u = mat.current?.uniforms;
     if (!u) return;
     gsap.killTweensOf(u.uMix);
@@ -126,9 +162,11 @@ function PanoSphere({ src, autoRotate, resetKey, pins, onView, onPick, onStatus 
     disposeTex(u.uB.value);
   }, []);
 
+  // Recentre on the start view when asked (a new src is handled when its image arrives, above).
   useEffect(() => {
-    Object.assign(view.current, { lon: 0, lat: 0, vLon: 0, vLat: 0, targetFov: DEFAULT_FOV, lastInput: performance.now() });
-  }, [src, resetKey]);
+    if (!resetKey) return;
+    turnTo(start(), 0.8);
+  }, [resetKey]);
 
   // Input
   useEffect(() => {
@@ -145,6 +183,7 @@ function PanoSphere({ src, autoRotate, resetKey, pins, onView, onPick, onStatus 
     };
 
     const onDown = (e: PointerEvent) => {
+      gsap.killTweensOf(v); // the visitor takes over from any lookAt
       el.setPointerCapture(e.pointerId);
       pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
       v.vLon = v.vLat = 0;
@@ -294,12 +333,57 @@ function disposeTex(t: THREE.Texture | null) {
   t.dispose();
 }
 
-export default function PanoramaViewer({ className, ...props }: SphereProps & { className?: string }) {
+/** Positions each marker's HTML over its direction every frame; hides markers behind the viewer. */
+function MarkerTracker({ markers, elements }: { markers: PanoMarker[]; elements: RefObject<Map<string, HTMLDivElement>> }) {
+  const p = useMemo(() => new THREE.Vector3(), []);
+  const ahead = useMemo(() => new THREE.Vector3(), []);
+  useFrame(({ camera, size }) => {
+    camera.updateMatrixWorld();
+    camera.getWorldDirection(ahead);
+    for (const m of markers) {
+      const el = elements.current.get(m.id);
+      if (!el) continue;
+      p.set(...dirOf(m, 1));
+      const front = p.dot(ahead) > 0.05;
+      p.project(camera);
+      const x = (p.x + 1) * 0.5 * size.width, y = (1 - p.y) * 0.5 * size.height;
+      const show = front && x > -80 && y > -80 && x < size.width + 80 && y < size.height + 80;
+      el.style.visibility = show ? "visible" : "hidden";
+      if (show) el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, 0)`;
+    }
+  });
+  return null;
+}
+
+/**
+ * A 360 panorama viewer. Markers are HTML (renderMarker), so they can be real buttons with our own design,
+ * keyboard focus and labels; the showroom tour (components/altier/ShowroomTour.tsx) builds on it. Pass
+ * `handle` for lookAt. See rich/03-showroom-virtual-tour.md.
+ */
+export default function PanoramaViewer<M extends PanoMarker = PanoMarker>({ className, markers = [], renderMarker, ...props }: SphereProps & {
+  className?: string;
+  markers?: M[];
+  renderMarker?: (m: M) => ReactNode;
+}) {
+  const elements = useRef(new Map<string, HTMLDivElement>());
   return (
-    <div className={className} style={{ touchAction: "none" }} data-lenis-prevent data-cursor="Drag">
+    // The marker overlay is placed against this box, so it must be positioned; add `relative` only when the
+    // caller has not (adding it next to `absolute` would collapse the box and shrink the canvas).
+    <div className={/\b(absolute|fixed|relative|sticky)\b/.test(className ?? "") ? className : `relative ${className ?? ""}`} style={{ touchAction: "none" }} data-lenis-prevent data-cursor="Drag">
       <Canvas flat dpr={[1, 2]} camera={{ position: [0, 0, 0], fov: DEFAULT_FOV, near: 0.1, far: 100 }} gl={{ antialias: true }}>
         <PanoSphere {...props} />
+        {renderMarker && <MarkerTracker markers={markers} elements={elements} />}
       </Canvas>
+      {renderMarker && (
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          {markers.map((m) => (
+            <div key={m.id} className="pointer-events-auto absolute left-0 top-0" style={{ visibility: "hidden" }}
+              ref={(el) => { if (el) elements.current.set(m.id, el); else elements.current.delete(m.id); }}>
+              {renderMarker(m)}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
