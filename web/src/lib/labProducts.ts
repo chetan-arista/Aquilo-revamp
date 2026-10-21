@@ -85,7 +85,9 @@ export async function writeProductFiles(slug: string, files: Record<string, unkn
 
 /** Starts a pipeline stage in the background (detached), logging to pipeline.log in the product folder. */
 export function startPipeline(slug: string, stage: "process" | "render") {
-  if (!BLENDER || !existsSync(BLENDER)) throw new Error("Set BLENDER in web/.env.local to blender.exe (Blender 4.5 LTS with build123d)");
+  // Dev-only paths from the environment: tell the bundler not to trace them (it would pull the whole project
+  // into the server output).
+  if (!BLENDER || !existsSync(/*turbopackIgnore: true*/ BLENDER)) throw new Error("Set BLENDER in web/.env.local to blender.exe (Blender 4.5 LTS with build123d)");
   const dir = path.join(PRODUCTS, slug);
   const log = openSync(path.join(dir, "pipeline.log"), "a");
   const child = spawn(process.execPath, [path.join(CAD, "pipeline.mjs"), dir, "--stage", stage], {

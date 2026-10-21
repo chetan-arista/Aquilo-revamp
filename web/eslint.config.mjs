@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Third-party builds served as they are (e.g. <model-viewer>).
+    "public/vendor/**",
   ]),
 ]);
 

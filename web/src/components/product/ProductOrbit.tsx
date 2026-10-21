@@ -15,7 +15,7 @@ import * as THREE from "three";
  * `azimuth` (a ref, degrees) turns the model to a fixed angle instead of orbit controls; the turntable
  * renderer (ai/product3d/render-spin.mjs) uses it to film a 360 spin from the model.
  */
-const FINISHES = {
+export const FINISHES = {
   chrome: { color: "#f3f5f8", metalness: 1, roughness: 0.035, clearcoat: 0 },
   "brushed nickel": { color: "#c9c3b8", metalness: 1, roughness: 0.32, clearcoat: 0.3 },
   "matte black": { color: "#141414", metalness: 0, roughness: 0.45, clearcoat: 0.15 },
@@ -26,7 +26,7 @@ const FINISHES = {
 export type Finish = keyof typeof FINISHES;
 
 /** The finish a CAD part was labelled with (ai/product3d/cad/build_cad.py), from its own or a parent's name. */
-function partFinish(o: THREE.Object3D | null): Finish | "main" | null {
+export function partFinish(o: THREE.Object3D | null): Finish | "main" | null {
   for (; o; o = o.parent) {
     const name = o.name.split(/[._]/)[0];
     if (name === "main") return "main";
@@ -88,7 +88,7 @@ const DOME_FRAGMENT = /* glsl */ `varying vec3 vDir;
  * The studio a metal or glazed finish reflects (the same recipe as the Blender renders): the gradient dome, long
  * white soft boxes either side and above, and black flags in front. Chrome is only what it reflects.
  */
-function ProductStudio() {
+export function ProductStudio() {
   return (
     <>
       <mesh scale={40}>

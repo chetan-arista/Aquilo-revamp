@@ -35,6 +35,8 @@ export default function ShowroomTour({ tour, initialSpot, initialProduct, closeH
   const [open, setOpen] = useState<Resolved | null>(null);
   const [listOpen, setListOpen] = useState(false);
   const [ready, setReady] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [retry, setRetry] = useState(0);
   const [touched, setTouched] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const lastPointer = useRef<string>("mouse");
@@ -53,6 +55,7 @@ export default function ShowroomTour({ tour, initialSpot, initialProduct, closeH
   // Deep link (?product=): once the first panorama is up, turn to that product and show its card.
   const deepLinked = useRef(false);
   const onStatus = (status: "loading" | "ready" | "error") => {
+    setFailed(status === "error");
     if (status !== "ready") return;
     setReady(true);
     if (deepLinked.current || !initialProduct) return;
@@ -91,13 +94,19 @@ export default function ShowroomTour({ tour, initialSpot, initialProduct, closeH
   };
 
   const closeQuickView = useCallback(() => setOpen(null), []);
+  useEffect(() => {
+    if (open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
   const directions = centre ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`AQUILO ${centre.address}`)}` : undefined;
 
   return (
     <div className="fixed inset-0 bg-onyx text-bone" onPointerDownCapture={(e) => { lastPointer.current = e.pointerType; }}>
       <PanoramaViewer<Resolved>
         className="absolute inset-0"
-        src={spot.panorama}
+        src={retry ? `${spot.panorama}${spot.panorama.includes("?") ? "&" : "?"}retry=${retry}` : spot.panorama}
         startView={spot.view}
         autoRotate={!reducedMotion && !active && !open && touched === false}
         resetKey={0}
@@ -166,7 +175,13 @@ export default function ShowroomTour({ tour, initialSpot, initialProduct, closeH
       <p className={`pointer-events-none absolute bottom-40 left-1/2 w-[80vw] -translate-x-1/2 text-center text-xs text-bone/70 transition-opacity duration-1000 md:bottom-24 md:w-auto ${ready && !touched && !active ? "opacity-100" : "opacity-0"}`}>
         Drag to look around · Select a light to see the piece
       </p>
-      {!ready && <p className="eyebrow pointer-events-none absolute inset-0 grid place-items-center text-bone/50">Opening the showroom</p>}
+      {!ready && !failed && <p className="eyebrow pointer-events-none absolute inset-0 grid place-items-center text-bone/50">Opening the showroom</p>}
+      {failed && (
+        <div role="alert" className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-sm border border-bone/15 bg-black/70 px-6 py-5 text-center backdrop-blur-xl">
+          <p className="text-sm">This view could not load.</p>
+          <button onClick={() => { setFailed(false); setRetry((n) => n + 1); }} className="eyebrow mt-4 rounded-full bg-bone px-5 py-2.5 text-[10px] text-onyx">Try again</button>
+        </div>
+      )}
 
       <ProductQuickView piece={open?.piece?.piece ?? null} collection={open?.piece?.collection ?? null} onClose={closeQuickView}
         note={centre ? `On display at the ${centre.city} Experience Centre, ${spot.title.toLowerCase()}.` : undefined} />
@@ -175,17 +190,21 @@ export default function ShowroomTour({ tour, initialSpot, initialProduct, closeH
 }
 
 function ProductMarker({ m, active, onEnter, onLeave, onClick }: { m: Resolved; active: boolean; onEnter: () => void; onLeave: () => void; onClick: () => void }) {
+  const box = useRef<HTMLDivElement>(null);
+  // Near the top of the screen the card opens below the light, so it is never cut off.
+  const [below, setBelow] = useState(false);
+  const enter = () => { setBelow((box.current?.getBoundingClientRect().top ?? 999) < 200); onEnter(); };
   const p = m.piece;
   if (!p) return null;
   const name = m.label ?? p.piece.type;
   return (
-    <div className="relative -translate-x-1/2 -translate-y-1/2" onPointerEnter={onEnter} onPointerLeave={onLeave}>
-      <button onClick={onClick} onFocus={onEnter} onBlur={onLeave} aria-label={`${name}, ${p.collection.name} in ${p.collection.finish}`} data-cursor="View"
+    <div ref={box} className="relative -translate-x-1/2 -translate-y-1/2" onPointerEnter={enter} onPointerLeave={onLeave}>
+      <button onClick={onClick} onFocus={enter} onBlur={onLeave} aria-label={`${name}, ${p.collection.name} in ${p.collection.finish}`} data-cursor="View"
         className="group grid size-11 place-items-center rounded-full outline-none">
         <span className={`absolute size-7 rounded-full bg-champagne/40 motion-safe:animate-ping ${active ? "opacity-0" : ""}`} />
         <span className={`relative size-3.5 rounded-full border-2 border-champagne bg-bone shadow-[0_0_18px_rgba(200,169,126,0.9)] transition-transform duration-500 ${active ? "scale-125" : "group-hover:scale-125"} group-focus-visible:ring-2 group-focus-visible:ring-bone`} />
       </button>
-      <div className={`pointer-events-none absolute bottom-full left-1/2 mb-2 w-56 -translate-x-1/2 transition-all duration-500 ${active ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}>
+      <div className={`pointer-events-none absolute left-1/2 w-56 -translate-x-1/2 transition-all duration-500 ${below ? "top-full mt-2" : "bottom-full mb-2"} ${active ? "translate-y-0 opacity-100" : below ? "-translate-y-2 opacity-0" : "translate-y-2 opacity-0"}`}>
         <div className="flex gap-3 rounded-sm border border-bone/15 bg-black/70 p-3 backdrop-blur-xl">
           <span className="relative size-16 shrink-0 rounded-sm bg-bone/5"><Image src={p.piece.image} alt="" fill sizes="64px" className="cutout object-contain p-1" /></span>
           <span className="min-w-0 self-center">

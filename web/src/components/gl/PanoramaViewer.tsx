@@ -12,21 +12,38 @@ export type PanoView = PanoLook & { fov: number };
 export type PanoPick = PanoLook & { u: number; v: number };
 /** Something placed in the panorama: drawn as HTML (renderMarker) that follows the view. */
 export type PanoMarker = PanoLook & { id: string };
-/** Imperative controls (pass a ref): turn the camera smoothly to a direction, or read where it looks. */
-export type PanoHandle = { lookAt: (target: PanoLook & { fov?: number }, seconds?: number) => void; getView: () => PanoView };
+/** Imperative controls (pass a ref): turn the camera smoothly to a direction, read where it looks, or capture
+ *  the current frame (with everything placed in the scene) as a JPEG. */
+export type PanoHandle = {
+  lookAt: (target: PanoLook & { fov?: number }, seconds?: number) => void;
+  getView: () => PanoView;
+  capture: () => Promise<Blob | null>;
+};
 
 const MIN_FOV = 30, MAX_FOV = 100, DEFAULT_FOV = 75, ZOOM_FOV = 40;
 const MAX_LAT = THREE.MathUtils.degToRad(85);
 const AUTO_SPEED = 0.05; // rad/s
 const IDLE_MS = 2500;
-const RADIUS = 10;
+/** Radius of the panorama sphere; things placed in the room sit inside it. */
+export const RADIUS = 10;
 
 const deg = THREE.MathUtils.radToDeg, rad = THREE.MathUtils.degToRad;
 const wrapDeg = (d: number) => ((((d + 180) % 360) + 360) % 360) - 180;
 
-function dirOf({ yaw, pitch }: PanoLook, r: number): [number, number, number] {
+/** The point at distance r in a direction (yaw / pitch, degrees). */
+export function dirOf({ yaw, pitch }: PanoLook, r: number): [number, number, number] {
   const y = rad(yaw), p = rad(pitch);
   return [r * Math.cos(p) * Math.sin(y), r * Math.sin(p), -r * Math.cos(p) * Math.cos(y)];
+}
+
+/** The direction (yaw / pitch) under a screen point, for a camera at the centre. */
+export function lookAtScreen(camera: THREE.Camera, el: HTMLElement, clientX: number, clientY: number): PanoLook {
+  const r = el.getBoundingClientRect();
+  const d = new THREE.Vector3(((clientX - r.left) / r.width) * 2 - 1, -((clientY - r.top) / r.height) * 2 + 1, 0.5)
+    .unproject(camera)
+    .sub(camera.position)
+    .normalize();
+  return { yaw: deg(Math.atan2(d.x, -d.z)), pitch: deg(Math.asin(d.y)) };
 }
 
 const vertexShader = /* glsl */ `
@@ -37,14 +54,31 @@ const vertexShader = /* glsl */ `
   }
 `;
 
-// Crossfades from the current panorama (uA) to the incoming one (uB).
+// Crossfades from the current panorama (uA) to the incoming one (uB). In photo mode (uPhoto = 1) the image is a
+// normal photo taken looking at yaw 0: each direction is projected into it through a pinhole camera with the
+// photo's field of view (uTan = tan of the half angles); outside the photo its edge fades to dark.
 const fragmentShader = /* glsl */ `
   uniform sampler2D uA;
   uniform sampler2D uB;
   uniform float uMix;
+  uniform float uPhoto;
+  uniform vec2 uTan;
   varying vec2 vUv;
+  vec2 photoUv(vec2 uv, out float inside) {
+    float yaw = (uv.x - 0.5) * 6.2831853, pitch = (uv.y - 0.5) * 3.1415927;
+    vec3 d = vec3(cos(pitch) * sin(yaw), sin(pitch), -cos(pitch) * cos(yaw));
+    vec2 p = vec2(d.x, d.y) / max(-d.z, 1e-4);
+    vec2 q = 0.5 + p / (2.0 * uTan);
+    vec2 edge = max(abs(q - 0.5) - 0.5, 0.0);
+    inside = d.z < 0.0 ? 1.0 - smoothstep(0.0, 0.06, length(edge)) : 0.0;
+    return clamp(q, 0.0, 1.0);
+  }
   void main() {
-    gl_FragColor = mix(texture2D(uA, vUv), texture2D(uB, vUv), uMix);
+    vec2 uv = vUv;
+    float inside = 1.0;
+    if (uPhoto > 0.5) uv = photoUv(vUv, inside);
+    vec4 c = mix(texture2D(uA, uv), texture2D(uB, uv), uMix);
+    gl_FragColor = vec4(c.rgb * mix(0.08, 1.0, inside), 1.0);
     #include <colorspace_fragment>
   }
 `;
@@ -60,6 +94,11 @@ type SphereProps = {
   onPick?: (p: PanoPick) => void;
   onStatus?: (s: "loading" | "ready" | "error") => void;
   handle?: Ref<PanoHandle>;
+  /** Set for a normal photo (not a 2:1 panorama): its horizontal field of view in degrees. The view then stays
+   *  inside the photo. */
+  photoFov?: number;
+  /** While true the visitor's drag does not turn the view (something in the scene is being dragged). */
+  locked?: boolean;
 };
 
 /**
@@ -67,18 +106,29 @@ type SphereProps = {
  * drag with inertia, wheel / pinch / double-click zoom, arrow keys, auto-rotate after a pause,
  * and a short click that reports the yaw / pitch (and image u / v) under the pointer.
  */
-function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, onPick, onStatus, handle }: SphereProps) {
+function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, onPick, onStatus, handle, photoFov, locked }: SphereProps) {
   const gl = useThree((s) => s.gl);
   const camera = useThree((s) => s.camera);
+  const scene = useThree((s) => s.scene);
   const mat = useRef<THREE.ShaderMaterial>(null);
-  const uniforms = useMemo(() => ({ uA: { value: null as THREE.Texture | null }, uB: { value: null as THREE.Texture | null }, uMix: { value: 0 } }), []);
+  const uniforms = useMemo(() => ({
+    uA: { value: null as THREE.Texture | null }, uB: { value: null as THREE.Texture | null }, uMix: { value: 0 },
+    uPhoto: { value: 0 }, uTan: { value: new THREE.Vector2(1, 1) },
+  }), []);
   // lon / lat in radians (lon + = look right), fov in degrees; v* = inertia in rad/s.
   const view = useRef({ lon: 0, lat: 0, fov: DEFAULT_FOV, targetFov: DEFAULT_FOV, vLon: 0, vLat: 0, lastInput: 0 });
+  // Photo mode: how far the view may turn and zoom out before leaving the photo (degrees; null = no limit).
+  const bounds = useRef<{ h: number; v: number } | null>(null);
 
   const status = useEffectEvent((s: "loading" | "ready" | "error") => onStatus?.(s));
   const pick = useEffectEvent((p: PanoPick) => onPick?.(p));
   const report = useEffectEvent((v: PanoView) => onView?.(v));
-  const start = useEffectEvent(() => ({ yaw: startView?.yaw ?? 0, pitch: startView?.pitch ?? 0, fov: startView?.fov ?? DEFAULT_FOV }));
+  const isLocked = useEffectEvent(() => !!locked);
+  const photo = useEffectEvent(() => photoFov);
+  const start = useEffectEvent(() => {
+    const b = bounds.current;
+    return { yaw: startView?.yaw ?? 0, pitch: startView?.pitch ?? 0, fov: Math.min(startView?.fov ?? DEFAULT_FOV, b ? b.v : MAX_FOV) };
+  });
 
   // Ease lon / lat / fov to a direction, the short way round.
   const turnTo = (target: PanoLook & { fov?: number }, seconds: number) => {
@@ -96,6 +146,11 @@ function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, o
   useImperativeHandle(handle, () => ({
     lookAt: (target, seconds = 1.1) => turnTo(target, seconds),
     getView: () => ({ yaw: wrapDeg(deg(view.current.lon)), pitch: deg(view.current.lat), fov: view.current.fov }),
+    // Render one frame now and read it back before the browser clears the canvas.
+    capture: () => {
+      gl.render(scene, camera);
+      return new Promise((resolve) => gl.domElement.toBlob(resolve, "image/jpeg", 0.92));
+    },
   }));
 
   // Load: decode off the main thread, shrink to the GPU's limit if needed, upload, then crossfade.
@@ -105,12 +160,23 @@ function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, o
     (async () => {
       let bmp = await new THREE.ImageBitmapLoader().setOptions({ imageOrientation: "flipY" }).loadAsync(src);
       const max = gl.capabilities.maxTextureSize;
-      if (bmp.width > max) {
-        const small = await createImageBitmap(bmp, { resizeWidth: max, resizeHeight: max / 2, resizeQuality: "high" });
+      if (bmp.width > max || bmp.height > max) {
+        const k = max / Math.max(bmp.width, bmp.height);
+        const small = await createImageBitmap(bmp, { resizeWidth: Math.round(bmp.width * k), resizeHeight: Math.round(bmp.height * k), resizeQuality: "high" });
         bmp.close();
         bmp = small;
       }
       if (cancelled) return bmp.close();
+      // A normal photo: its vertical field of view follows from the horizontal one and the photo's shape.
+      const fovX = photo();
+      if (fovX) {
+        const tanH = Math.tan(rad(fovX) / 2), tanV = (tanH * bmp.height) / bmp.width;
+        mat.current!.uniforms.uTan.value.set(tanH, tanV);
+        bounds.current = { h: fovX, v: deg(2 * Math.atan(tanV)) };
+      } else {
+        bounds.current = null;
+      }
+      mat.current!.uniforms.uPhoto.value = fovX ? 1 : 0;
       const tex = new THREE.Texture(bmp);
       tex.flipY = false;
       tex.colorSpace = THREE.SRGBColorSpace;
@@ -206,6 +272,12 @@ function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, o
         v.targetFov = THREE.MathUtils.clamp((pinch.fov * pinch.dist) / Math.max(spread(), 1), MIN_FOV, MAX_FOV);
         return;
       }
+      if (isLocked()) {
+        // Something in the scene is being dragged: no turning, and the press is not a click either.
+        down.moved = Infinity;
+        last = { x: e.clientX, y: e.clientY, t: performance.now() };
+        return;
+      }
       const dx = e.clientX - last.x, dy = e.clientY - last.y;
       const now = performance.now(), dt = Math.max((now - last.t) / 1000, 1 / 240);
       const k = perPixel();
@@ -227,13 +299,8 @@ function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, o
       }
       if (pointers.size) return;
       if (performance.now() - last.t > 80) v.vLon = v.vLat = 0; // held still before letting go
-      if (down.moved < 5 && performance.now() - down.t < 350) {
-        const r = el.getBoundingClientRect();
-        const d = new THREE.Vector3(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1, 0.5)
-          .unproject(camera)
-          .sub(camera.position)
-          .normalize();
-        const yaw = deg(Math.atan2(d.x, -d.z)), pitch = deg(Math.asin(d.y));
+      if (down.moved < 5 && performance.now() - down.t < 350 && !isLocked()) {
+        const { yaw, pitch } = lookAtScreen(camera, el, e.clientX, e.clientY);
         pick({ yaw, pitch, u: 0.5 + yaw / 360, v: 0.5 - pitch / 180 });
       }
     };
@@ -293,6 +360,15 @@ function PanoSphere({ src, autoRotate, resetKey, pins = [], startView, onView, o
       v.vLat *= decay;
     } else if (autoRotate && idle) {
       v.lon += AUTO_SPEED * d;
+    }
+    // Photo mode: never zoom out past the photo or turn off its edges.
+    const b = bounds.current;
+    if (b) {
+      const cam0 = state.camera as THREE.PerspectiveCamera;
+      v.targetFov = Math.min(v.targetFov, b.v);
+      const halfV = (b.v - v.fov) / 2, halfH = (b.h - v.fov * cam0.aspect) / 2;
+      v.lat = THREE.MathUtils.clamp(v.lat, -rad(Math.max(halfV, 0)), rad(Math.max(halfV, 0)));
+      v.lon = THREE.MathUtils.clamp(v.lon, -rad(Math.max(halfH, 0)), rad(Math.max(halfH, 0)));
     }
     v.fov = THREE.MathUtils.damp(v.fov, v.targetFov, 10, d);
 
@@ -360,10 +436,12 @@ function MarkerTracker({ markers, elements }: { markers: PanoMarker[]; elements:
  * keyboard focus and labels; the showroom tour (components/altier/ShowroomTour.tsx) builds on it. Pass
  * `handle` for lookAt. See rich/03-showroom-virtual-tour.md.
  */
-export default function PanoramaViewer<M extends PanoMarker = PanoMarker>({ className, markers = [], renderMarker, ...props }: SphereProps & {
+export default function PanoramaViewer<M extends PanoMarker = PanoMarker>({ className, markers = [], renderMarker, children, ...props }: SphereProps & {
   className?: string;
   markers?: M[];
   renderMarker?: (m: M) => ReactNode;
+  /** R3F objects to place in the room (inside the sphere, camera at the centre): the try-on studio's products. */
+  children?: ReactNode;
 }) {
   const elements = useRef(new Map<string, HTMLDivElement>());
   return (
@@ -372,6 +450,7 @@ export default function PanoramaViewer<M extends PanoMarker = PanoMarker>({ clas
     <div className={/\b(absolute|fixed|relative|sticky)\b/.test(className ?? "") ? className : `relative ${className ?? ""}`} style={{ touchAction: "none" }} data-lenis-prevent data-cursor="Drag">
       <Canvas flat dpr={[1, 2]} camera={{ position: [0, 0, 0], fov: DEFAULT_FOV, near: 0.1, far: 100 }} gl={{ antialias: true }}>
         <PanoSphere {...props} />
+        {children}
         {renderMarker && <MarkerTracker markers={markers} elements={elements} />}
       </Canvas>
       {renderMarker && (

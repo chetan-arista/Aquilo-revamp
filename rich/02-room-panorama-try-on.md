@@ -1,7 +1,38 @@
 # Feature 2: Try it in your bathroom (panorama try-on)
 
-Status: **planned, not started** (written 2026-10-19). A brief for whoever builds it, including Claude
-in a later session.
+Status: **Phase A built, plus AR (Phase C), as a dev prototype (2026-10-20)**: `/lab/studio` and
+`/lab/studio/ar`. Waiting for AQUILO's real catalogue (cut-outs, finishes, 3D models) before a public `/studio`.
+A brief for whoever continues it, including Claude in a later session.
+
+## Built so far (2026-10-20)
+The owner's brief: "the customer opens the feature: live AR, or a normal or panorama picture that becomes a live
+panorama viewer and editor where they try another colour of the same product or a different product".
+- **Start** (`components/studio/RoomStudio.tsx`): use your photo, take one now (`capture="environment"`), see it
+  live in your space (AR), or a sample room.
+- **Photos**: a 2:1 image opens as a 360 panorama; any other photo is projected into the same viewer as a window
+  of its field of view (`PanoramaViewer photoFov`, shader pinhole projection; the view cannot leave the photo;
+  a Lens slider adjusts the angle). One editor for both.
+- **Room reading** (`lib/studio/roomStyle.ts`): average colour weighted for the panorama's poles → "Mid toned,
+  warm and rich", and the top 3 collections by finish with a reason (rules, no AI, nothing uploaded).
+- **Editor**: drawer (Suggested, Basin, Shower, Bath, Accessories, 3D); a piece appears where you look and drags
+  into place (the viewer is `locked` while dragging, `lookAtScreen()` maps the pointer to yaw / pitch); cut-outs
+  stand on camera facing quads with a contact shadow (`components/studio/PlacedItems.tsx`); size, flip, remove;
+  "this kind of piece in our other finishes" swaps between collections; **3D models** (feature 1's CAD route)
+  turn and switch finish live (chrome, brushed nickel, matte black…) under the chrome studio light.
+- Before / after, undo (Ctrl+Z), Save picture (`PanoHandle.capture()` → JPEG, interface hidden), Share (Web Share
+  with the file, falls back to save), Ask a consultant (WhatsApp with the piece list). Phone layout: the drawer
+  folds away while arranging.
+- **AR** (`components/studio/ArViewer.tsx`, `/lab/studio/ar`): `<model-viewer>` 4.3.1 self-hosted in
+  `public/vendor/model-viewer/4.3.1/` (its self-contained build bundles its own three.js, so no clash with the
+  site's 0.186; npm install refused the peer range). Scene Viewer / WebXR on Android, Quick Look on iPhone (USDZ
+  built on the fly), true size (`ar-scale="fixed"`), finish set on the `main` material before AR opens. The CAD
+  pipeline now also writes `model-ar.glb` (uncompressed, PBR materials named by part) next to `model-web.glb`.
+  Tested on desktop (loads, finish switches, says AR needs a phone); **real AR still needs a phone test**: open
+  `http://<computer's LAN address>:3000/lab/studio/ar` on the same Wi-Fi; WebXR also needs HTTPS (a tunnel).
+
+Honest limits: the catalogue has no colour variants of one design, so for photo cut-outs "another colour" means
+the same kind of piece in another collection; true "same product, new colour" comes from 3D models. Placement is
+free (no depth yet): Phase B depth and segmentation would size and seat pieces automatically.
 
 ## Context for whoever picks this up
 - Site: AQUILO Altier, Next.js 16 app in `web/` (read `web/AGENTS.md`). three.js via React Three Fiber,
